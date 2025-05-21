@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript Backend | Prof. Tiago Segato</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Prof. Tiago Segato</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="sobre.html">Sobre o Curso</a></li>
+                    <li><a href="estrutura.html">Estrutura</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Módulos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="modulos/lpjs.html">Lógica de Programação com JavaScript</a></li>
+                            <li><a href="modulos/git.html">Git, GitHub e GitLab</a></li>
+                            <li><a href="modulos/jstob.html">JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="modulos/pds.html">Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="modulos/iws.html">Introdução a WebServices</a></li>
+                            <li><a href="modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="modulos/nbd.html">Noções de Banco de Dados</a></li>
+                            <li><a href="modulos/scrum.html">Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Projeto <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="projeto/index.html">Visão Geral</a></li>
+                            <li><a href="projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="exercicios.html">Exercícios</a></li>
+                    <li><a href="recursos.html">Recursos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Desenvolvimento Backend com JavaScript</h1>
+            <h2>Do Zero à Aplicação Completa</h2>
+            <p>Aprenda a desenvolver aplicações backend robustas utilizando JavaScript, Node.js e Express</p>
+            <div class="hero-buttons">
+                <a href="estrutura.html" class="btn btn-primary">Ver Conteúdo do Curso</a>
+                <a href="projeto/index.html" class="btn btn-secondary">Explorar Projeto Prático</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que você vai aprender</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="feature-icon fas fa-code"></i>
+                    <h3>Lógica de Programação com JavaScript</h3>
+                    <p>Domine os fundamentos da linguagem JavaScript e aplique em contextos de backend, com estruturas de controle, funções e modularização.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="feature-icon fas fa-cubes"></i>
+                    <h3>JavaScript e Orientação a Objetos</h3>
+                    <p>Aprenda a estruturar seu código utilizando classes, herança, encapsulamento e todos os conceitos do paradigma orientado a objetos.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="feature-icon fas fa-sitemap"></i>
+                    <h3>Padrões de Desenvolvimento</h3>
+                    <p>Implemente soluções utilizando padrões de projeto consagrados e arquitetura MVC para criar aplicações organizadas e escaláveis.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="feature-icon fab fa-node-js"></i>
+                    <h3>Node.js e Express</h3>
+                    <p>Desenvolva APIs RESTful utilizando o ecossistema Node.js, com roteamento, middlewares e integração com banco de dados.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="feature-icon fas fa-database"></i>
+                    <h3>Banco de Dados</h3>
+                    <p>Aprenda modelagem de dados, SQL e integração com Node.js para criar aplicações completas com persistência de dados.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="feature-icon fas fa-project-diagram"></i>
+                    <h3>Projeto Completo</h3>
+                    <p>Desenvolva um sistema real de gerenciamento para estúdio de pilates, aplicando todos os conceitos em um contexto prático.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" style="background-color: #f5f5f7;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="text-center mb-5">
+                        <h2>Sobre o Curso</h2>
+                        <p>Este curso completo de JavaScript Backend foi desenvolvido para levar você do conhecimento básico até o desenvolvimento de aplicações reais e robustas.</p>
+                    </div>
+                    <p>O curso tem como objetivo desenvolver as habilidades necessárias em programação, noções de padrões de desenvolvimento de software, arquitetura cliente-servidor, noções de banco de dados e frameworks back-end para que você seja capaz de projetar soluções web que sejam seguras, robustas e escaláveis.</p>
+                    <p>Com uma abordagem prática e focada em projetos, você aprenderá não apenas a sintaxe, mas também as melhores práticas de desenvolvimento, padrões de projeto e arquitetura de software.</p>
+                    <p>Ao final do curso, você terá desenvolvido um sistema completo de gerenciamento para estúdio de pilates, aplicando todos os conceitos aprendidos em um contexto real.</p>
+                    <div class="text-center mt-4">
+                        <a href="sobre.html" class="btn btn-primary">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Projeto Prático: Sistema de Gerenciamento para Estúdio de Pilates</h2>
+                    <h3>Um sistema completo desenvolvido do zero</h3>
+                    <p>Durante o curso, você irá desenvolver um sistema de gerenciamento para estúdio de pilates, implementando:</p>
+                    <ul>
+                        <li>CRUD completo de alunos, instrutores e modalidades</li>
+                        <li>Autenticação e autorização de usuários</li>
+                        <li>Integração com banco de dados</li>
+                        <li>API RESTful com Express</li>
+                        <li>Validação de dados e tratamento de erros</li>
+                        <li>Arquitetura em camadas</li>
+                    </ul>
+                    <a href="projeto/index.html" class="btn btn-primary mt-3">Ver detalhes do projeto</a>
+                </div>
+                <div class="col-md-6">
+                    <div class="project-image">
+                        <img src="img/projeto-preview.jpg" alt="Prévia do Projeto" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" style="background-color: #f5f5f7;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Módulos do Curso</h2>
+            </div>
+            <div class="modulos-grid">
+                <div class="modulo-card">
+                    <div class="modulo-header">
+                        <div class="modulo-number">01</div>
+                    </div>
+                    <div class="modulo-body">
+                        <h3>Lógica de Programação com JavaScript</h3>
+                        <p>Visão geral do curso, introdução à web, papel do desenvolvedor, algoritmos, ferramentas, variáveis, estruturas de controle e funções.</p>
+                    </div>
+                    <div class="modulo-footer">
+                        <a href="modulos/lpjs.html" class="btn btn-outline">Ver módulo</a>
+                    </div>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-header">
+                        <div class="modulo-number">02</div>
+                    </div>
+                    <div class="modulo-body">
+                        <h3>Git, GitHub e GitLab</h3>
+                        <p>Definição, comandos básicos, ferramenta visual, GitHub e trabalho em equipe com branches.</p>
+                    </div>
+                    <div class="modulo-footer">
+                        <a href="modulos/git.html" class="btn btn-outline">Ver módulo</a>
+                    </div>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-header">
+                        <div class="modulo-number">03</div>
+                    </div>
+                    <div class="modulo-body">
+                        <h3>JavaScript e Orientação a Objetos</h3>
+                        <p>Conceitos do paradigma da programação orientada a objetos, classes, atributos, métodos, herança, polimorfismo e encapsulamento.</p>
+                    </div>
+                    <div class="modulo-footer">
+                        <a href="modulos/jstob.html" class="btn btn-outline">Ver módulo</a>
+                    </div>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-header">
+                        <div class="modulo-number">04</div>
+                    </div>
+                    <div class="modulo-body">
+                        <h3>Padrões de Desenvolvimento de Software</h3>
+                        <p>Introdução a padrões arquiteturais e de projeto, princípios SOLID, arquitetura MVC e documentação técnica.</p>
+                    </div>
+                    <div class="modulo-footer">
+                        <a href="modulos/pds.html" class="btn btn-outline">Ver módulo</a>
+                    </div>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-header">
+                        <div class="modulo-number">05</div>
+                    </div>
+                    <div class="modulo-body">
+                        <h3>Introdução a WebServices</h3>
+                        <p>Serviço HTTP e protocolos web, fundamentos básicos, métodos HTTP, gerenciamento de sessão e APIs REST/SOAP.</p>
+                    </div>
+                    <div class="modulo-footer">
+                        <a href="modulos/iws.html" class="btn btn-outline">Ver módulo</a>
+                    </div>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-header">
+                        <div class="modulo-number">06</div>
+                    </div>
+                    <div class="modulo-body">
+                        <h3>Node.js</h3>
+                        <p>Introdução a Node.js, Express.js, roteamento, integração com BD, Sequelize, CRUD na API e programação assíncrona.</p>
+                    </div>
+                    <div class="modulo-footer">
+                        <a href="modulos/nodejs.html" class="btn btn-outline">Ver módulo</a>
+                    </div>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-header">
+                        <div class="modulo-number">07</div>
+                    </div>
+                    <div class="modulo-body">
+                        <h3>Noções de Banco de Dados</h3>
+                        <p>Modelos Conceitual, Lógico e Físico, entidades, relacionamentos, cardinalidades, SQL e operações CRUD.</p>
+                    </div>
+                    <div class="modulo-footer">
+                        <a href="modulos/nbd.html" class="btn btn-outline">Ver módulo</a>
+                    </div>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-header">
+                        <div class="modulo-number">08</div>
+                    </div>
+                    <div class="modulo-body">
+                        <h3>Metodologias Ágeis e Scrum</h3>
+                        <p>Introdução às metodologias ágeis, Scrum, papéis, artefatos, cerimônias e ciclo de vida.</p>
+                    </div>
+                    <div class="modulo-footer">
+                        <a href="modulos/scrum.html" class="btn btn-outline">Ver módulo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta">
+                <h2>Pronto para começar sua jornada no desenvolvimento backend?</h2>
+                <p>Explore o conteúdo completo do curso e comece a desenvolver aplicações reais com JavaScript, Node.js e Express.</p>
+                <a href="estrutura.html" class="btn btn-primary">Começar Agora</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Tiago Segato</h2>
+                    <p>Desenvolvimento Backend com JavaScript: Do Zero à Aplicação Completa</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.linkedin.com/in/tiagosegato/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tiagosegato" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.youtube.com/@tiagosegato" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@tiagosegato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/tiagosegato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="sobre.html">Sobre o Curso</a></li>
+                            <li><a href="estrutura.html">Estrutura</a></li>
+                            <li><a href="exercicios.html">Exercícios</a></li>
+                            <li><a href="recursos.html">Recursos</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Módulos</h3>
+                        <ul>
+                            <li><a href="modulos/lpjs.html">Lógica de Programação</a></li>
+                            <li><a href="modulos/git.html">Git e GitHub</a></li>
+                            <li><a href="modulos/jstob.html">JavaScript e OO</a></li>
+                            <li><a href="modulos/pds.html">Padrões de Desenvolvimento</a></li>
+                            <li><a href="modulos/iws.html">WebServices</a></li>
+                            <li><a href="modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="modulos/nbd.html">Banco de Dados</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Projeto</h3>
+                        <ul>
+                            <li><a href="projeto/index.html">Visão Geral</a></li>
+                            <li><a href="projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Tiago Segato. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="https://tiagosegato.com/" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    <a href="mailto:contato@tiagosegato.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
