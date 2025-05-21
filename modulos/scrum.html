@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodologias Ágeis e Scrum | Prof. Tiago Segato</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Prof. Tiago Segato</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../sobre.html">Sobre o Curso</a></li>
+                    <li><a href="../estrutura.html">Estrutura</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active">Módulos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="lpjs.html">Lógica de Programação com JavaScript</a></li>
+                            <li><a href="git.html">Git, GitHub e GitLab</a></li>
+                            <li><a href="jstob.html">JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="pds.html">Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="iws.html">Introdução a WebServices</a></li>
+                            <li><a href="nodejs.html">Node.js</a></li>
+                            <li><a href="nbd.html">Noções de Banco de Dados</a></li>
+                            <li><a href="scrum.html" class="active">Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Projeto <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../projeto/index.html">Visão Geral</a></li>
+                            <li><a href="../projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="../projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="../projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="../projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../exercicios.html">Exercícios</a></li>
+                    <li><a href="../recursos.html">Recursos</a></li>
+                    <li><a href="../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../estrutura.html">Estrutura</a></li>
+                <li>Metodologias Ágeis e Scrum</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Módulo 8: Metodologias Ágeis e Scrum</h1>
+            <p>Princípios e práticas para desenvolvimento de software colaborativo e eficiente</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-layout">
+                <div class="main-content">
+                    <h2>Visão Geral do Módulo</h2>
+                    <p>Neste módulo, você aprenderá sobre metodologias ágeis de desenvolvimento de software, com foco especial no framework Scrum. Você conhecerá os princípios, valores e práticas que permitem às equipes entregar software de qualidade de forma iterativa e incremental, respondendo rapidamente às mudanças e priorizando a colaboração e a entrega de valor.</p>
+                    
+                    <div class="module-info">
+                        <div class="module-info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Carga Horária</h3>
+                                <p>8 horas</p>
+                            </div>
+                        </div>
+                        <div class="module-info-item">
+                            <i class="fas fa-tasks"></i>
+                            <div>
+                                <h3>Nível</h3>
+                                <p>Intermediário</p>
+                            </div>
+                        </div>
+                        <div class="module-info-item">
+                            <i class="fas fa-code-branch"></i>
+                            <div>
+                                <h3>Pré-requisitos</h3>
+                                <p>Módulos 1, 2, 3, 4, 5, 6 e 7</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Conteúdo Programático</h2>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>1. Introdução às Metodologias Ágeis</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>História e evolução das metodologias de desenvolvimento</li>
+                                    <li>Problemas do modelo cascata (waterfall)</li>
+                                    <li>Manifesto Ágil: valores e princípios</li>
+                                    <li>Benefícios da abordagem ágil</li>
+                                    <li>Panorama das principais metodologias ágeis</li>
+                                    <li>Quando usar (e quando não usar) metodologias ágeis</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>2. Scrum: Visão Geral</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>O que é Scrum</li>
+                                    <li>História e evolução do Scrum</li>
+                                    <li>Pilares do Scrum: transparência, inspeção e adaptação</li>
+                                    <li>Valores do Scrum</li>
+                                    <li>Visão geral do framework</li>
+                                    <li>Scrum vs. outras metodologias ágeis</li>
+                                    <li>Mitos e equívocos comuns sobre Scrum</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>3. Papéis no Scrum</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Product Owner: responsabilidades e desafios</li>
+                                    <li>Scrum Master: responsabilidades e desafios</li>
+                                    <li>Time de Desenvolvimento: responsabilidades e desafios</li>
+                                    <li>Stakeholders e seu papel no Scrum</li>
+                                    <li>Tamanho ideal do time</li>
+                                    <li>Equipes multifuncionais e auto-organizadas</li>
+                                    <li>Interações entre os papéis</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>4. Artefatos do Scrum</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Product Backlog: criação, refinamento e priorização</li>
+                                    <li>Sprint Backlog: planejamento e gestão</li>
+                                    <li>Incremento: definição e critérios de "Pronto"</li>
+                                    <li>Histórias de usuário e critérios de aceitação</li>
+                                    <li>Estimativas: story points, planning poker</li>
+                                    <li>Burndown e Burnup charts</li>
+                                    <li>Radiadores de informação</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>5. Eventos do Scrum</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Sprint: duração e objetivos</li>
+                                    <li>Sprint Planning: preparação e condução</li>
+                                    <li>Daily Scrum: formato e boas práticas</li>
+                                    <li>Sprint Review: demonstração e feedback</li>
+                                    <li>Sprint Retrospective: melhoria contínua</li>
+                                    <li>Refinamento do Backlog</li>
+                                    <li>Timeboxing e sua importância</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>6. Práticas Ágeis Complementares</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Desenvolvimento Orientado a Testes (TDD)</li>
+                                    <li>Integração Contínua (CI)</li>
+                                    <li>Entrega Contínua (CD)</li>
+                                    <li>Programação em Pares</li>
+                                    <li>Refatoração contínua</li>
+                                    <li>Design Emergente</li>
+                                    <li>DevOps e sua relação com Agile</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>7. Escalando Scrum e Metodologias Ágeis</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Desafios de escalar Scrum</li>
+                                    <li>Scrum of Scrums</li>
+                                    <li>SAFe (Scaled Agile Framework)</li>
+                                    <li>LeSS (Large-Scale Scrum)</li>
+                                    <li>Nexus</li>
+                                    <li>Spotify Model</li>
+                                    <li>Coordenação entre múltiplos times</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>8. Ferramentas para Gestão Ágil</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Quadros físicos vs. ferramentas digitais</li>
+                                    <li>Jira Software</li>
+                                    <li>Trello</li>
+                                    <li>Azure DevOps</li>
+                                    <li>GitHub Projects</li>
+                                    <li>GitLab Boards</li>
+                                    <li>Critérios para seleção de ferramentas</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>9. Implementação e Transição para Metodologias Ágeis</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Avaliação de prontidão organizacional</li>
+                                    <li>Estratégias de transição</li>
+                                    <li>Desafios comuns e como superá-los</li>
+                                    <li>Métricas para avaliar o sucesso</li>
+                                    <li>Cultura ágil e mudança organizacional</li>
+                                    <li>Liderança em ambientes ágeis</li>
+                                    <li>Estudos de caso e lições aprendidas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Exemplos Práticos</h2>
+                    
+                    <div class="example-section">
+                        <h3>Exemplo de Product Backlog para o Sistema de Gerenciamento de Estúdio de Pilates</h3>
+                        
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>História de Usuário</th>
+                                        <th>Critérios de Aceitação</th>
+                                        <th>Prioridade</th>
+                                        <th>Estimativa (Story Points)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>US-01</td>
+                                        <td>Como administrador, quero cadastrar novos alunos no sistema para manter um registro atualizado dos clientes do estúdio.</td>
+                                        <td>
+                                            <ul>
+                                                <li>Deve ser possível cadastrar nome, email, telefone, data de nascimento e endereço</li>
+                                                <li>O email deve ser único no sistema</li>
+                                                <li>Todos os campos devem ser validados</li>
+                                                <li>Deve exibir mensagem de sucesso após o cadastro</li>
+                                            </ul>
+                                        </td>
+                                        <td>Alta</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>US-02</td>
+                                        <td>Como administrador, quero visualizar a lista de todos os alunos cadastrados para ter uma visão geral dos clientes do estúdio.</td>
+                                        <td>
+                                            <ul>
+                                                <li>A lista deve mostrar nome, email e telefone de cada aluno</li>
+                                                <li>Deve ser possível ordenar por nome, data de cadastro</li>
+                                                <li>Deve ser possível filtrar alunos ativos/inativos</li>
+                                                <li>Deve ser possível pesquisar por nome ou email</li>
+                                            </ul>
+                                        </td>
+                                        <td>Alta</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>US-03</td>
+                                        <td>Como administrador, quero editar as informações de um aluno para manter os dados atualizados.</td>
+                                        <td>
+                                            <ul>
+                                                <li>Deve ser possível editar todos os campos do cadastro</li>
+                                                <li>Deve validar os dados antes de salvar</li>
+                                                <li>Deve exibir mensagem de sucesso após a atualização</li>
+                                            </ul>
+                                        </td>
+                                        <td>Alta</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>US-04</td>
+                                        <td>Como administrador, quero desativar o cadastro de um aluno quando ele parar de frequentar o estúdio.</td>
+                                        <td>
+                                            <ul>
+                                                <li>Deve solicitar confirmação antes de desativar</li>
+                                                <li>Deve permitir reativar um aluno desativado</li>
+                                                <li>Alunos desativados não devem aparecer na lista principal por padrão</li>
+                                            </ul>
+                                        </td>
+                                        <td>Média</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>US-05</td>
+                                        <td>Como administrador, quero visualizar os detalhes completos de um aluno para ter acesso a todas as suas informações.</td>
+                                        <td>
+                                            <ul>
+                                                <li>Deve mostrar todos os dados cadastrais</li>
+                                                <li>Deve mostrar histórico de aulas</li>
+                                                <li>Deve mostrar histórico de pagamentos</li>
+                                                <li>Deve permitir navegar para as telas de edição</li>
+                                            </ul>
+                                        </td>
+                                        <td>Média</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>US-06</td>
+                                        <td>Como administrador, quero cadastrar instrutores no sistema para registrar quem pode ministrar aulas no estúdio.</td>
+                                        <td>
+                                            <ul>
+                                                <li>Deve ser possível cadastrar nome, email, telefone, especialidade</li>
+                                                <li>O email deve ser único no sistema</li>
+                                                <li>Todos os campos devem ser validados</li>
+                                            </ul>
+                                        </td>
+                                        <td>Alta</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>US-07</td>
+                                        <td>Como administrador, quero cadastrar modalidades de aulas para organizar os diferentes tipos de atividades oferecidas.</td>
+                                        <td>
+                                            <ul>
+                                                <li>Deve ser possível cadastrar nome, descrição, duração padrão</li>
+                                                <li>O nome deve ser único no sistema</li>
+                                            </ul>
+                                        </td>
+                                        <td>Alta</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>US-08</td>
+                                        <td>Como administrador, quero agendar aulas no sistema para organizar a programação do estúdio.</td>
+                                        <td>
+                                            <ul>
+                                                <li>Deve ser possível selecionar modalidade, instrutor, data/hora, capacidade</li>
+                                                <li>Não deve permitir conflito de horários para o mesmo instrutor</li>
+                                                <li>Deve validar disponibilidade de sala</li>
+                                            </ul>
+                                        </td>
+                                        <td>Alta</td>
+                                        <td>8</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="example-section">
+                        <h3>Exemplo de Sprint Planning para o Sistema de Gerenciamento de Estúdio de Pilates</h3>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Sprint 1: Cadastro e Gestão de Alunos</h4>
+                                <p><strong>Objetivo do Sprint:</strong> Implementar as funcionalidades básicas de cadastro e gestão de alunos.</p>
+                                <p><strong>Duração:</strong> 2 semanas</p>
+                            </div>
+                            <div class="card-body">
+                                <h5>Sprint Backlog:</h5>
+                                <ul>
+                                    <li>
+                                        <strong>US-01:</strong> Cadastro de alunos
+                                        <ul>
+                                            <li>Tarefa 1: Criar modelo de dados para alunos (2h)</li>
+                                            <li>Tarefa 2: Implementar API para criação de alunos (4h)</li>
+                                            <li>Tarefa 3: Criar formulário de cadastro no frontend (6h)</li>
+                                            <li>Tarefa 4: Implementar validações de formulário (3h)</li>
+                                            <li>Tarefa 5: Testar e corrigir bugs (3h)</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>US-02:</strong> Listagem de alunos
+                                        <ul>
+                                            <li>Tarefa 1: Implementar API para listar alunos (3h)</li>
+                                            <li>Tarefa 2: Criar interface de listagem no frontend (4h)</li>
+                                            <li>Tarefa 3: Implementar filtros e ordenação (5h)</li>
+                                            <li>Tarefa 4: Testar e corrigir bugs (2h)</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>US-03:</strong> Edição de alunos
+                                        <ul>
+                                            <li>Tarefa 1: Implementar API para atualização de alunos (3h)</li>
+                                            <li>Tarefa 2: Criar formulário de edição no frontend (4h)</li>
+                                            <li>Tarefa 3: Implementar validações (2h)</li>
+                                            <li>Tarefa 4: Testar e corrigir bugs (2h)</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>US-04:</strong> Desativação de alunos
+                                        <ul>
+                                            <li>Tarefa 1: Implementar API para ativar/desativar alunos (2h)</li>
+                                            <li>Tarefa 2: Criar interface para confirmação (2h)</li>
+                                            <li>Tarefa 3: Atualizar listagem para filtrar por status (2h)</li>
+                                            <li>Tarefa 4: Testar e corrigir bugs (1h)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                
+                                <h5>Capacidade do Time:</h5>
+                                <ul>
+                                    <li>3 desenvolvedores x 30 horas produtivas por semana x 2 semanas = 180 horas</li>
+                                    <li>Total de horas estimadas: 48 horas</li>
+                                    <li>Capacidade restante: 132 horas (para outras tarefas, reuniões, documentação, etc.)</li>
+                                </ul>
+                                
+                                <h5>Definição de Pronto:</h5>
+                                <ul>
+                                    <li>Código implementado e revisado</li>
+                                    <li>Testes unitários implementados com cobertura mínima de 80%</li>
+                                    <li>Testes de integração implementados</li>
+                                    <li>Documentação atualizada</li>
+                                    <li>Funcionalidade aprovada pelo Product Owner</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Exercícios Práticos</h2>
+                    <p>Para fixar os conceitos aprendidos neste módulo, recomendamos a realização dos seguintes exercícios:</p>
+                    
+                    <ol>
+                        <li>Crie um Product Backlog para um projeto de sua escolha, com pelo menos 10 histórias de usuário.</li>
+                        <li>Escreva critérios de aceitação detalhados para 3 histórias de usuário.</li>
+                        <li>Realize uma sessão de Planning Poker para estimar histórias de usuário (em grupo).</li>
+                        <li>Planeje um Sprint completo, incluindo Sprint Backlog e quebra de tarefas.</li>
+                        <li>Simule uma Daily Scrum com sua equipe ou colegas.</li>
+                        <li>Conduza uma Sprint Review simulada para apresentar um incremento de produto.</li>
+                        <li>Realize uma Sprint Retrospective para identificar pontos de melhoria em um projeto.</li>
+                        <li>Configure um quadro Kanban (físico ou digital) para acompanhar o progresso das tarefas.</li>
+                    </ol>
+                    
+                    <p>Você encontrará mais exercícios e desafios na seção de <a href="../exercicios.html">Exercícios</a>.</p>
+                    
+                    <div class="cta mt-5">
+                        <h3>Parabéns por concluir todos os módulos!</h3>
+                        <p>Você completou todos os módulos do curso de JavaScript Backend. Agora é hora de aplicar todos os conhecimentos adquiridos no projeto prático.</p>
+                        <a href="../projeto/index.html" class="btn btn-primary">Ver Projeto Prático</a>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-nav">
+                        <h3>Módulos do Curso</h3>
+                        <ul>
+                            <li><a href="lpjs.html">1. Lógica de Programação com JavaScript</a></li>
+                            <li><a href="git.html">2. Git, GitHub e GitLab</a></li>
+                            <li><a href="jstob.html">3. JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="pds.html">4. Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="iws.html">5. Introdução a WebServices</a></li>
+                            <li><a href="nodejs.html">6. Node.js</a></li>
+                            <li><a href="nbd.html">7. Noções de Banco de Dados</a></li>
+                            <li><a href="scrum.html" class="active">8. Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Recursos Adicionais</h3>
+                        <div class="recursos-links">
+                            <a href="../recursos.html#videos" class="recurso-link">
+                                <i class="fas fa-video"></i> Vídeos Recomendados
+                            </a>
+                            <a href="../exercicios.html#modulo8" class="recurso-link">
+                                <i class="fas fa-code"></i> Exercícios Práticos
+                            </a>
+                            <a href="https://scrumguides.org/scrum-guide.html" target="_blank" class="recurso-link">
+                                <i class="fas fa-book"></i> Guia do Scrum
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Projeto Relacionado</h3>
+                        <div class="projeto-preview">
+                            <h4>Sistema de Gerenciamento para Estúdio de Pilates</h4>
+                            <p>Os conceitos de Metodologias Ágeis e Scrum serão aplicados no planejamento e execução do projeto prático do curso.</p>
+                            <a href="../projeto/index.html" class="btn btn-outline btn-sm">Ver Projeto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Tiago Segato</h2>
+                    <p>Desenvolvimento Backend com JavaScript: Do Zero à Aplicação Completa</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.linkedin.com/in/tiagosegato/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tiagosegato" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.youtube.com/@tiagosegato" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@tiagosegato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/tiagosegato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../sobre.html">Sobre o Curso</a></li>
+                            <li><a href="../estrutura.html">Estrutura</a></li>
+                            <li><a href="../exercicios.html">Exercícios</a></li>
+                            <li><a href="../recursos.html">Recursos</a></li>
+                            <li><a href="../contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Módulos</h3>
+                        <ul>
+                            <li><a href="lpjs.html">Lógica de Programação</a></li>
+                            <li><a href="git.html">Git e GitHub</a></li>
+                            <li><a href="jstob.html">JavaScript e OO</a></li>
+                            <li><a href="pds.html">Padrões de Desenvolvimento</a></li>
+                            <li><a href="iws.html">WebServices</a></li>
+                            <li><a href="nodejs.html">Node.js</a></li>
+                            <li><a href="nbd.html">Banco de Dados</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Projeto</h3>
+                        <ul>
+                            <li><a href="../projeto/index.html">Visão Geral</a></li>
+                            <li><a href="../projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="../projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="../projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="../projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Tiago Segato. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="https://tiagosegato.com/" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    <a href="mailto:contato@tiagosegato.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

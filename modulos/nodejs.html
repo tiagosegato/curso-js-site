@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js | Prof. Tiago Segato</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Prof. Tiago Segato</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../sobre.html">Sobre o Curso</a></li>
+                    <li><a href="../estrutura.html">Estrutura</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active">Módulos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="lpjs.html">Lógica de Programação com JavaScript</a></li>
+                            <li><a href="git.html">Git, GitHub e GitLab</a></li>
+                            <li><a href="jstob.html">JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="pds.html">Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="iws.html">Introdução a WebServices</a></li>
+                            <li><a href="nodejs.html" class="active">Node.js</a></li>
+                            <li><a href="nbd.html">Noções de Banco de Dados</a></li>
+                            <li><a href="scrum.html">Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Projeto <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../projeto/index.html">Visão Geral</a></li>
+                            <li><a href="../projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="../projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="../projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="../projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../exercicios.html">Exercícios</a></li>
+                    <li><a href="../recursos.html">Recursos</a></li>
+                    <li><a href="../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../estrutura.html">Estrutura</a></li>
+                <li>Node.js</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Módulo 6: Node.js</h1>
+            <p>Desenvolvimento de aplicações backend com JavaScript</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-layout">
+                <div class="main-content">
+                    <h2>Visão Geral do Módulo</h2>
+                    <p>Neste módulo, você aprenderá sobre Node.js, um ambiente de execução JavaScript do lado do servidor que permite construir aplicações backend escaláveis e de alta performance. Você conhecerá os fundamentos do Node.js, o framework Express para desenvolvimento de APIs e aplicações web, e como implementar funcionalidades essenciais para aplicações backend.</p>
+                    
+                    <div class="module-info">
+                        <div class="module-info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Carga Horária</h3>
+                                <p>12 horas</p>
+                            </div>
+                        </div>
+                        <div class="module-info-item">
+                            <i class="fas fa-tasks"></i>
+                            <div>
+                                <h3>Nível</h3>
+                                <p>Intermediário</p>
+                            </div>
+                        </div>
+                        <div class="module-info-item">
+                            <i class="fas fa-code-branch"></i>
+                            <div>
+                                <h3>Pré-requisitos</h3>
+                                <p>Módulos 1, 2, 3, 4 e 5</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Conteúdo Programático</h2>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>1. Introdução ao Node.js</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>O que é Node.js e sua história</li>
+                                    <li>Arquitetura e funcionamento interno</li>
+                                    <li>Event Loop e programação assíncrona</li>
+                                    <li>Vantagens e casos de uso</li>
+                                    <li>Instalação e configuração do ambiente</li>
+                                    <li>Node.js REPL</li>
+                                    <li>Executando scripts com Node.js</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>2. Sistema de Módulos</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>CommonJS vs ES Modules</li>
+                                    <li>Criação e exportação de módulos</li>
+                                    <li>Importação de módulos</li>
+                                    <li>Módulos nativos do Node.js</li>
+                                    <li>NPM (Node Package Manager)</li>
+                                    <li>package.json e gerenciamento de dependências</li>
+                                    <li>Criação e publicação de pacotes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>3. Módulos Nativos Essenciais</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>fs (File System)</li>
+                                    <li>path</li>
+                                    <li>os</li>
+                                    <li>http/https</li>
+                                    <li>url</li>
+                                    <li>events</li>
+                                    <li>stream</li>
+                                    <li>buffer</li>
+                                    <li>util</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>4. Programação Assíncrona em Node.js</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Callbacks</li>
+                                    <li>Promises</li>
+                                    <li>Async/Await</li>
+                                    <li>Event Emitters</li>
+                                    <li>Tratamento de erros assíncronos</li>
+                                    <li>Padrões para código assíncrono</li>
+                                    <li>Paralelismo vs Concorrência</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>5. Express.js</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Introdução ao Express.js</li>
+                                    <li>Configuração e estrutura básica</li>
+                                    <li>Roteamento</li>
+                                    <li>Middleware</li>
+                                    <li>Tratamento de requisições e respostas</li>
+                                    <li>Manipulação de parâmetros e query strings</li>
+                                    <li>Servindo arquivos estáticos</li>
+                                    <li>Templates engines (EJS, Pug, Handlebars)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>6. Desenvolvimento de APIs RESTful</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Princípios de APIs RESTful</li>
+                                    <li>Estruturação de rotas</li>
+                                    <li>Controladores</li>
+                                    <li>Validação de dados</li>
+                                    <li>Tratamento de erros</li>
+                                    <li>Middleware para autenticação</li>
+                                    <li>CORS</li>
+                                    <li>Rate limiting</li>
+                                    <li>Documentação de APIs (Swagger/OpenAPI)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>7. Persistência de Dados</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Conexão com bancos de dados SQL (MySQL, PostgreSQL)</li>
+                                    <li>Conexão com bancos de dados NoSQL (MongoDB)</li>
+                                    <li>ORM (Sequelize, TypeORM)</li>
+                                    <li>ODM (Mongoose)</li>
+                                    <li>Migrations e seeds</li>
+                                    <li>Transações</li>
+                                    <li>Padrão Repository</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>8. Autenticação e Autorização</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Estratégias de autenticação</li>
+                                    <li>Sessões vs Tokens</li>
+                                    <li>JWT (JSON Web Tokens)</li>
+                                    <li>Passport.js</li>
+                                    <li>OAuth 2.0</li>
+                                    <li>Controle de acesso baseado em funções (RBAC)</li>
+                                    <li>Proteção contra ataques comuns</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>9. Testes em Node.js</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Tipos de testes (unitários, integração, e2e)</li>
+                                    <li>Frameworks de teste (Mocha, Jest)</li>
+                                    <li>Asserções (Chai, Jest)</li>
+                                    <li>Mocks e stubs (Sinon, Jest)</li>
+                                    <li>Testes de API (Supertest)</li>
+                                    <li>Cobertura de código</li>
+                                    <li>TDD (Test-Driven Development)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>10. Implantação e Escalabilidade</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Preparação para produção</li>
+                                    <li>Variáveis de ambiente</li>
+                                    <li>PM2 e gerenciamento de processos</li>
+                                    <li>Docker e containerização</li>
+                                    <li>Implantação em serviços de nuvem</li>
+                                    <li>Balanceamento de carga</li>
+                                    <li>Monitoramento e logging</li>
+                                    <li>Estratégias de escalabilidade</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Exemplos Práticos</h2>
+                    
+                    <div class="code-example">
+                        <h3>Servidor HTTP Básico com Node.js</h3>
+                        <pre><code>// Importação do módulo http
+const http = require('http');
+
+// Definição da porta
+const PORT = process.env.PORT || 3000;
+
+// Criação do servidor
+const server = http.createServer((req, res) => {
+  // Configuração dos cabeçalhos de resposta
+  res.setHeader('Content-Type', 'text/html');
+  
+  // Obtenção da URL da requisição
+  const url = req.url;
+  const method = req.method;
+  
+  // Roteamento básico
+  if (url === '/') {
+    res.statusCode = 200;
+    res.end(`
+      &lt;html&gt;
+        &lt;head&gt;
+          &lt;title&gt;Servidor Node.js&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;h1&gt;Bem-vindo ao Servidor Node.js&lt;/h1&gt;
+          &lt;p&gt;Esta é uma página inicial simples servida pelo Node.js.&lt;/p&gt;
+          &lt;nav&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="/sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="/contato"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/nav&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+    `);
+  } else if (url === '/sobre') {
+    res.statusCode = 200;
+    res.end(`
+      &lt;html&gt;
+        &lt;head&gt;
+          &lt;title&gt;Sobre - Servidor Node.js&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;h1&gt;Sobre o Servidor&lt;/h1&gt;
+          &lt;p&gt;Este é um exemplo simples de um servidor HTTP criado com Node.js.&lt;/p&gt;
+          &lt;a href="/"&gt;Voltar para Home&lt;/a&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+    `);
+  } else if (url === '/contato') {
+    res.statusCode = 200;
+    res.end(`
+      &lt;html&gt;
+        &lt;head&gt;
+          &lt;title&gt;Contato - Servidor Node.js&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;h1&gt;Contato&lt;/h1&gt;
+          &lt;form method="POST" action="/enviar-mensagem"&gt;
+            &lt;div&gt;
+              &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+              &lt;input type="text" id="nome" name="nome" required&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label for="email"&gt;Email:&lt;/label&gt;
+              &lt;input type="email" id="email" name="email" required&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label for="mensagem"&gt;Mensagem:&lt;/label&gt;
+              &lt;textarea id="mensagem" name="mensagem" required&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+            &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+          &lt;/form&gt;
+          &lt;a href="/"&gt;Voltar para Home&lt;/a&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+    `);
+  } else if (url === '/enviar-mensagem' && method === 'POST') {
+    // Captura dos dados do formulário
+    let body = '';
+    
+    req.on('data', (chunk) => {
+      body += chunk.toString();
+    });
+    
+    req.on('end', () => {
+      console.log('Dados do formulário:', body);
+      
+      // Redirecionamento após o envio
+      res.statusCode = 302;
+      res.setHeader('Location', '/mensagem-enviada');
+      res.end();
+    });
+  } else if (url === '/mensagem-enviada') {
+    res.statusCode = 200;
+    res.end(`
+      &lt;html&gt;
+        &lt;head&gt;
+          &lt;title&gt;Mensagem Enviada - Servidor Node.js&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;h1&gt;Mensagem Enviada com Sucesso!&lt;/h1&gt;
+          &lt;p&gt;Obrigado por entrar em contato. Responderemos em breve.&lt;/p&gt;
+          &lt;a href="/"&gt;Voltar para Home&lt;/a&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+    `);
+  } else {
+    // Página não encontrada
+    res.statusCode = 404;
+    res.end(`
+      &lt;html&gt;
+        &lt;head&gt;
+          &lt;title&gt;404 - Página não encontrada&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;h1&gt;404 - Página não encontrada&lt;/h1&gt;
+          &lt;p&gt;A página que você está procurando não existe.&lt;/p&gt;
+          &lt;a href="/"&gt;Voltar para Home&lt;/a&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+    `);
+  }
+});
+
+// Inicialização do servidor
+server.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
+});</code></pre>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h3>API RESTful com Express.js</h3>
+                        <pre><code>// Importação dos módulos necessários
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+// Criação da aplicação Express
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Configuração de middlewares
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Middleware de logging
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  next();
+});
+
+// Dados de exemplo (simulando um banco de dados)
+let alunos = [
+  { id: 1, nome: 'João Silva', email: 'joao@exemplo.com', telefone: '(11) 98765-4321', ativo: true },
+  { id: 2, nome: 'Maria Santos', email: 'maria@exemplo.com', telefone: '(11) 91234-5678', ativo: true },
+  { id: 3, nome: 'Pedro Oliveira', email: 'pedro@exemplo.com', telefone: '(11) 99876-5432', ativo: false }
+];
+
+// Rotas da API
+
+// Rota raiz
+app.get('/', (req, res) => {
+  res.json({
+    message: 'API de Gerenciamento de Alunos',
+    version: '1.0.0',
+    endpoints: [
+      { method: 'GET', path: '/api/alunos', description: 'Listar todos os alunos' },
+      { method: 'GET', path: '/api/alunos/:id', description: 'Obter um aluno específico' },
+      { method: 'POST', path: '/api/alunos', description: 'Criar um novo aluno' },
+      { method: 'PUT', path: '/api/alunos/:id', description: 'Atualizar um aluno existente' },
+      { method: 'DELETE', path: '/api/alunos/:id', description: 'Excluir um aluno' }
+    ]
+  });
+});
+
+// Listar todos os alunos
+app.get('/api/alunos', (req, res) => {
+  // Filtragem opcional por status (ativo/inativo)
+  const { ativo } = req.query;
+  
+  if (ativo !== undefined) {
+    const filtrado = alunos.filter(aluno => aluno.ativo === (ativo === 'true'));
+    return res.json({
+      success: true,
+      count: filtrado.length,
+      data: filtrado
+    });
+  }
+  
+  res.json({
+    success: true,
+    count: alunos.length,
+    data: alunos
+  });
+});
+
+// Obter um aluno específico
+app.get('/api/alunos/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const aluno = alunos.find(a => a.id === id);
+  
+  if (!aluno) {
+    return res.status(404).json({
+      success: false,
+      message: 'Aluno não encontrado'
+    });
+  }
+  
+  res.json({
+    success: true,
+    data: aluno
+  });
+});
+
+// Criar um novo aluno
+app.post('/api/alunos', (req, res) => {
+  const { nome, email, telefone } = req.body;
+  
+  // Validação básica
+  if (!nome || !email) {
+    return res.status(400).json({
+      success: false,
+      message: 'Nome e email são obrigatórios'
+    });
+  }
+  
+  // Verificar se o email já existe
+  if (alunos.some(a => a.email === email)) {
+    return res.status(409).json({
+      success: false,
+      message: 'Email já cadastrado'
+    });
+  }
+  
+  // Criar novo aluno
+  const novoAluno = {
+    id: alunos.length > 0 ? Math.max(...alunos.map(a => a.id)) + 1 : 1,
+    nome,
+    email,
+    telefone,
+    ativo: true
+  };
+  
+  alunos.push(novoAluno);
+  
+  res.status(201).json({
+    success: true,
+    message: 'Aluno criado com sucesso',
+    data: novoAluno
+  });
+});
+
+// Atualizar um aluno existente
+app.put('/api/alunos/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const { nome, email, telefone, ativo } = req.body;
+  
+  // Encontrar o índice do aluno
+  const index = alunos.findIndex(a => a.id === id);
+  
+  if (index === -1) {
+    return res.status(404).json({
+      success: false,
+      message: 'Aluno não encontrado'
+    });
+  }
+  
+  // Verificar se o email já existe (exceto para o próprio aluno)
+  if (email && email !== alunos[index].email && alunos.some(a => a.email === email)) {
+    return res.status(409).json({
+      success: false,
+      message: 'Email já cadastrado para outro aluno'
+    });
+  }
+  
+  // Atualizar o aluno
+  alunos[index] = {
+    ...alunos[index],
+    nome: nome || alunos[index].nome,
+    email: email || alunos[index].email,
+    telefone: telefone || alunos[index].telefone,
+    ativo: ativo !== undefined ? ativo : alunos[index].ativo
+  };
+  
+  res.json({
+    success: true,
+    message: 'Aluno atualizado com sucesso',
+    data: alunos[index]
+  });
+});
+
+// Excluir um aluno
+app.delete('/api/alunos/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  
+  // Verificar se o aluno existe
+  if (!alunos.some(a => a.id === id)) {
+    return res.status(404).json({
+      success: false,
+      message: 'Aluno não encontrado'
+    });
+  }
+  
+  // Remover o aluno
+  alunos = alunos.filter(a => a.id !== id);
+  
+  res.json({
+    success: true,
+    message: 'Aluno excluído com sucesso'
+  });
+});
+
+// Middleware para tratamento de rotas não encontradas
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: 'Endpoint não encontrado'
+  });
+});
+
+// Middleware para tratamento de erros
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({
+    success: false,
+    message: 'Erro interno do servidor'
+  });
+});
+
+// Inicialização do servidor
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
+});</code></pre>
+                    </div>
+                    
+                    <h2>Exercícios Práticos</h2>
+                    <p>Para fixar os conceitos aprendidos neste módulo, recomendamos a realização dos seguintes exercícios:</p>
+                    
+                    <ol>
+                        <li>Crie um servidor HTTP básico que sirva páginas HTML estáticas.</li>
+                        <li>Desenvolva uma API RESTful para gerenciar uma lista de tarefas (to-do list).</li>
+                        <li>Implemente autenticação JWT em uma API Express.</li>
+                        <li>Crie um middleware personalizado para logging de requisições.</li>
+                        <li>Desenvolva uma aplicação que leia e escreva arquivos utilizando o módulo fs.</li>
+                        <li>Implemente uma API que se conecte a um banco de dados (MySQL ou MongoDB).</li>
+                        <li>Crie testes unitários para uma API Express utilizando Jest ou Mocha.</li>
+                        <li>Desenvolva uma aplicação que utilize WebSockets para comunicação em tempo real.</li>
+                    </ol>
+                    
+                    <p>Você encontrará mais exercícios e desafios na seção de <a href="../exercicios.html">Exercícios</a>.</p>
+                    
+                    <div class="cta mt-5">
+                        <h3>Pronto para avançar?</h3>
+                        <p>Após dominar os conceitos de Node.js, você estará preparado para avançar para o próximo módulo.</p>
+                        <a href="nbd.html" class="btn btn-primary">Próximo Módulo: Noções de Banco de Dados</a>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-nav">
+                        <h3>Módulos do Curso</h3>
+                        <ul>
+                            <li><a href="lpjs.html">1. Lógica de Programação com JavaScript</a></li>
+                            <li><a href="git.html">2. Git, GitHub e GitLab</a></li>
+                            <li><a href="jstob.html">3. JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="pds.html">4. Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="iws.html">5. Introdução a WebServices</a></li>
+                            <li><a href="nodejs.html" class="active">6. Node.js</a></li>
+                            <li><a href="nbd.html">7. Noções de Banco de Dados</a></li>
+                            <li><a href="scrum.html">8. Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Recursos Adicionais</h3>
+                        <div class="recursos-links">
+                            <a href="../recursos.html#videos" class="recurso-link">
+                                <i class="fas fa-video"></i> Vídeos Recomendados
+                            </a>
+                            <a href="../exercicios.html#modulo6" class="recurso-link">
+                                <i class="fas fa-code"></i> Exercícios Práticos
+                            </a>
+                            <a href="https://nodejs.org/docs/latest-v16.x/api/" target="_blank" class="recurso-link">
+                                <i class="fas fa-book"></i> Documentação Node.js
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Projeto Relacionado</h3>
+                        <div class="projeto-preview">
+                            <h4>Sistema de Gerenciamento para Estúdio de Pilates</h4>
+                            <p>Os conceitos de Node.js serão aplicados no desenvolvimento do backend do projeto prático do curso.</p>
+                            <a href="../projeto/index.html" class="btn btn-outline btn-sm">Ver Projeto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Tiago Segato</h2>
+                    <p>Desenvolvimento Backend com JavaScript: Do Zero à Aplicação Completa</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.linkedin.com/in/tiagosegato/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tiagosegato" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.youtube.com/@tiagosegato" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@tiagosegato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/tiagosegato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../sobre.html">Sobre o Curso</a></li>
+                            <li><a href="../estrutura.html">Estrutura</a></li>
+                            <li><a href="../exercicios.html">Exercícios</a></li>
+                            <li><a href="../recursos.html">Recursos</a></li>
+                            <li><a href="../contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Módulos</h3>
+                        <ul>
+                            <li><a href="lpjs.html">Lógica de Programação</a></li>
+                            <li><a href="git.html">Git e GitHub</a></li>
+                            <li><a href="jstob.html">JavaScript e OO</a></li>
+                            <li><a href="pds.html">Padrões de Desenvolvimento</a></li>
+                            <li><a href="iws.html">WebServices</a></li>
+                            <li><a href="nodejs.html">Node.js</a></li>
+                            <li><a href="nbd.html">Banco de Dados</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Projeto</h3>
+                        <ul>
+                            <li><a href="../projeto/index.html">Visão Geral</a></li>
+                            <li><a href="../projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="../projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="../projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="../projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Tiago Segato. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="https://tiagosegato.com/" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    <a href="mailto:contato@tiagosegato.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

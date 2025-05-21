@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noções de Banco de Dados | Prof. Tiago Segato</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Prof. Tiago Segato</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../sobre.html">Sobre o Curso</a></li>
+                    <li><a href="../estrutura.html">Estrutura</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active">Módulos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="lpjs.html">Lógica de Programação com JavaScript</a></li>
+                            <li><a href="git.html">Git, GitHub e GitLab</a></li>
+                            <li><a href="jstob.html">JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="pds.html">Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="iws.html">Introdução a WebServices</a></li>
+                            <li><a href="nodejs.html">Node.js</a></li>
+                            <li><a href="nbd.html" class="active">Noções de Banco de Dados</a></li>
+                            <li><a href="scrum.html">Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Projeto <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../projeto/index.html">Visão Geral</a></li>
+                            <li><a href="../projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="../projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="../projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="../projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../exercicios.html">Exercícios</a></li>
+                    <li><a href="../recursos.html">Recursos</a></li>
+                    <li><a href="../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../estrutura.html">Estrutura</a></li>
+                <li>Noções de Banco de Dados</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Módulo 7: Noções de Banco de Dados</h1>
+            <p>Fundamentos de armazenamento e manipulação de dados para aplicações backend</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-layout">
+                <div class="main-content">
+                    <h2>Visão Geral do Módulo</h2>
+                    <p>Neste módulo, você aprenderá os conceitos fundamentais de bancos de dados, incluindo modelagem, linguagem SQL, e como integrar bancos de dados relacionais e não-relacionais com aplicações Node.js. Esses conhecimentos são essenciais para desenvolver aplicações backend que necessitam armazenar e manipular dados de forma eficiente e segura.</p>
+                    
+                    <div class="module-info">
+                        <div class="module-info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Carga Horária</h3>
+                                <p>10 horas</p>
+                            </div>
+                        </div>
+                        <div class="module-info-item">
+                            <i class="fas fa-tasks"></i>
+                            <div>
+                                <h3>Nível</h3>
+                                <p>Intermediário</p>
+                            </div>
+                        </div>
+                        <div class="module-info-item">
+                            <i class="fas fa-code-branch"></i>
+                            <div>
+                                <h3>Pré-requisitos</h3>
+                                <p>Módulos 1, 2, 3, 4, 5 e 6</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Conteúdo Programático</h2>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>1. Introdução a Bancos de Dados</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>O que são bancos de dados</li>
+                                    <li>Tipos de bancos de dados (relacionais e não-relacionais)</li>
+                                    <li>Sistemas de Gerenciamento de Bancos de Dados (SGBD)</li>
+                                    <li>Comparação entre diferentes SGBDs</li>
+                                    <li>Casos de uso para diferentes tipos de bancos de dados</li>
+                                    <li>Instalação e configuração básica</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>2. Modelagem de Dados</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Conceitos de modelagem de dados</li>
+                                    <li>Modelo Entidade-Relacionamento (ER)</li>
+                                    <li>Diagrama Entidade-Relacionamento (DER)</li>
+                                    <li>Normalização de dados</li>
+                                    <li>Chaves primárias e estrangeiras</li>
+                                    <li>Relacionamentos (1:1, 1:N, N:M)</li>
+                                    <li>Ferramentas de modelagem</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>3. SQL Básico</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Introdução à linguagem SQL</li>
+                                    <li>DDL (Data Definition Language): CREATE, ALTER, DROP</li>
+                                    <li>DML (Data Manipulation Language): INSERT, UPDATE, DELETE</li>
+                                    <li>DQL (Data Query Language): SELECT</li>
+                                    <li>Cláusulas WHERE, ORDER BY, GROUP BY, HAVING</li>
+                                    <li>Funções agregadas (COUNT, SUM, AVG, MAX, MIN)</li>
+                                    <li>Criação de tabelas e definição de tipos de dados</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>4. SQL Avançado</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>JOINs (INNER, LEFT, RIGHT, FULL)</li>
+                                    <li>Subconsultas (Subqueries)</li>
+                                    <li>Índices e otimização de consultas</li>
+                                    <li>Transações e controle de concorrência</li>
+                                    <li>Stored Procedures e Functions</li>
+                                    <li>Triggers</li>
+                                    <li>Views</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>5. MySQL</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Instalação e configuração do MySQL</li>
+                                    <li>Ferramentas de administração (MySQL Workbench)</li>
+                                    <li>Tipos de dados específicos do MySQL</li>
+                                    <li>Backup e restauração de bancos de dados</li>
+                                    <li>Segurança e gerenciamento de usuários</li>
+                                    <li>Otimização de performance</li>
+                                    <li>Particularidades do MySQL</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>6. NoSQL e MongoDB</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Introdução a bancos de dados NoSQL</li>
+                                    <li>Tipos de bancos NoSQL (documentos, chave-valor, coluna, grafo)</li>
+                                    <li>MongoDB: conceitos e arquitetura</li>
+                                    <li>Documentos, coleções e bancos de dados</li>
+                                    <li>CRUD no MongoDB</li>
+                                    <li>Consultas e agregações</li>
+                                    <li>Índices no MongoDB</li>
+                                    <li>Modelagem de dados para MongoDB</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>7. Integração com Node.js: MySQL</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Drivers e bibliotecas para MySQL (mysql2)</li>
+                                    <li>Conexão com banco de dados MySQL</li>
+                                    <li>Execução de consultas SQL</li>
+                                    <li>Tratamento de resultados</li>
+                                    <li>Prepared Statements</li>
+                                    <li>Transações</li>
+                                    <li>Pool de conexões</li>
+                                    <li>ORM: Sequelize</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>8. Integração com Node.js: MongoDB</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Driver oficial do MongoDB para Node.js</li>
+                                    <li>Conexão com banco de dados MongoDB</li>
+                                    <li>Operações CRUD</li>
+                                    <li>Consultas e filtros</li>
+                                    <li>Agregações</li>
+                                    <li>ODM: Mongoose</li>
+                                    <li>Schemas e Models</li>
+                                    <li>Validação de dados</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>9. Boas Práticas e Padrões</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Segurança de dados</li>
+                                    <li>Prevenção de SQL Injection</li>
+                                    <li>Gerenciamento de credenciais</li>
+                                    <li>Padrão Repository</li>
+                                    <li>Data Access Layer (DAL)</li>
+                                    <li>Migrations e Seeds</li>
+                                    <li>Testes de integração com bancos de dados</li>
+                                    <li>Monitoramento e logging</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Exemplos Práticos</h2>
+                    
+                    <div class="code-example">
+                        <h3>Criação de Banco de Dados e Tabelas para Estúdio de Pilates</h3>
+                        <pre><code>-- Criação do banco de dados
+CREATE DATABASE IF NOT EXISTS estudio_pilates;
+
+-- Uso do banco de dados
+USE estudio_pilates;
+
+-- Criação da tabela de alunos
+CREATE TABLE IF NOT EXISTS alunos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  telefone VARCHAR(20),
+  data_nascimento DATE,
+  endereco VARCHAR(200),
+  observacoes TEXT,
+  ativo BOOLEAN DEFAULT TRUE,
+  data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Criação da tabela de instrutores
+CREATE TABLE IF NOT EXISTS instrutores (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  telefone VARCHAR(20),
+  especialidade VARCHAR(100),
+  biografia TEXT,
+  ativo BOOLEAN DEFAULT TRUE,
+  data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Criação da tabela de modalidades
+CREATE TABLE IF NOT EXISTS modalidades (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  descricao TEXT,
+  duracao_padrao INT COMMENT 'Duração padrão em minutos',
+  ativo BOOLEAN DEFAULT TRUE,
+  data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Criação da tabela de aulas
+CREATE TABLE IF NOT EXISTS aulas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  modalidade_id INT NOT NULL,
+  instrutor_id INT NOT NULL,
+  titulo VARCHAR(100) NOT NULL,
+  descricao TEXT,
+  data_hora_inicio DATETIME NOT NULL,
+  data_hora_fim DATETIME NOT NULL,
+  capacidade_maxima INT,
+  ativo BOOLEAN DEFAULT TRUE,
+  data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (modalidade_id) REFERENCES modalidades(id),
+  FOREIGN KEY (instrutor_id) REFERENCES instrutores(id)
+);
+
+-- Criação da tabela de matrículas (relacionamento entre alunos e aulas)
+CREATE TABLE IF NOT EXISTS matriculas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  aluno_id INT NOT NULL,
+  aula_id INT NOT NULL,
+  data_matricula TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  status ENUM('confirmada', 'cancelada', 'pendente') DEFAULT 'pendente',
+  observacoes TEXT,
+  FOREIGN KEY (aluno_id) REFERENCES alunos(id),
+  FOREIGN KEY (aula_id) REFERENCES aulas(id),
+  UNIQUE KEY unique_aluno_aula (aluno_id, aula_id)
+);
+
+-- Criação da tabela de pagamentos
+CREATE TABLE IF NOT EXISTS pagamentos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  aluno_id INT NOT NULL,
+  valor DECIMAL(10, 2) NOT NULL,
+  data_pagamento DATE NOT NULL,
+  metodo_pagamento ENUM('dinheiro', 'cartao_credito', 'cartao_debito', 'pix', 'transferencia') NOT NULL,
+  descricao VARCHAR(200),
+  comprovante VARCHAR(255) COMMENT 'Caminho para o arquivo de comprovante',
+  data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (aluno_id) REFERENCES alunos(id)
+);
+
+-- Criação da tabela de avaliações físicas
+CREATE TABLE IF NOT EXISTS avaliacoes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  aluno_id INT NOT NULL,
+  instrutor_id INT NOT NULL,
+  data_avaliacao DATE NOT NULL,
+  peso DECIMAL(5, 2),
+  altura DECIMAL(3, 2),
+  imc DECIMAL(5, 2),
+  observacoes TEXT,
+  recomendacoes TEXT,
+  data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (aluno_id) REFERENCES alunos(id),
+  FOREIGN KEY (instrutor_id) REFERENCES instrutores(id)
+);
+
+-- Inserção de dados de exemplo para modalidades
+INSERT INTO modalidades (nome, descricao, duracao_padrao) VALUES
+('Pilates Solo', 'Aulas de Pilates realizadas no solo, com foco em exercícios de controle corporal.', 60),
+('Pilates com Aparelhos', 'Aulas de Pilates utilizando aparelhos específicos como Reformer, Cadillac e Chair.', 50),
+('Pilates para Gestantes', 'Aulas adaptadas para gestantes, com foco em fortalecimento e preparação para o parto.', 45),
+('Pilates Terapêutico', 'Aulas focadas em reabilitação e tratamento de lesões específicas.', 60);
+
+-- Inserção de dados de exemplo para instrutores
+INSERT INTO instrutores (nome, email, telefone, especialidade, biografia) VALUES
+('Ana Silva', 'ana.silva@exemplo.com', '(11) 98765-4321', 'Pilates Clínico', 'Formada em Fisioterapia com especialização em Pilates Clínico.'),
+('Carlos Oliveira', 'carlos.oliveira@exemplo.com', '(11) 91234-5678', 'Pilates para Atletas', 'Educador Físico com 10 anos de experiência em treinamento de atletas.'),
+('Mariana Santos', 'mariana.santos@exemplo.com', '(11) 99876-5432', 'Pilates para Gestantes', 'Fisioterapeuta especializada em saúde da mulher e pilates para gestantes.');
+
+-- Inserção de dados de exemplo para alunos
+INSERT INTO alunos (nome, email, telefone, data_nascimento, endereco, observacoes) VALUES
+('João Silva', 'joao.silva@exemplo.com', '(11) 98888-7777', '1985-03-15', 'Rua das Flores, 123', 'Iniciante em Pilates. Tem histórico de dor lombar.'),
+('Maria Souza', 'maria.souza@exemplo.com', '(11) 97777-8888', '1990-07-22', 'Av. Paulista, 1000', 'Pratica Pilates há 2 anos. Gestante de 5 meses.'),
+('Pedro Santos', 'pedro.santos@exemplo.com', '(11) 96666-9999', '1978-11-10', 'Rua Augusta, 500', 'Atleta de corrida. Busca melhorar flexibilidade.'),
+('Camila Oliveira', 'camila.oliveira@exemplo.com', '(11) 95555-4444', '1995-04-30', 'Rua Oscar Freire, 200', 'Iniciante. Busca melhorar postura e fortalecer core.');</code></pre>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h3>Integração com Node.js e MySQL</h3>
+                        <pre><code>// Importação dos módulos necessários
+const mysql = require('mysql2/promise');
+const dotenv = require('dotenv');
+
+// Carregamento das variáveis de ambiente
+dotenv.config();
+
+// Configuração da conexão com o banco de dados
+const dbConfig = {
+  host: process.env.DB_HOST || 'localhost',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || 'password',
+  database: process.env.DB_NAME || 'estudio_pilates',
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
+};
+
+// Criação do pool de conexões
+const pool = mysql.createPool(dbConfig);
+
+// Classe para gerenciar alunos
+class AlunoRepository {
+  // Obter todos os alunos
+  async findAll() {
+    try {
+      const [rows] = await pool.query('SELECT * FROM alunos WHERE ativo = TRUE ORDER BY nome');
+      return rows;
+    } catch (error) {
+      console.error('Erro ao buscar alunos:', error);
+      throw error;
+    }
+  }
+  
+  // Obter um aluno pelo ID
+  async findById(id) {
+    try {
+      const [rows] = await pool.query('SELECT * FROM alunos WHERE id = ? AND ativo = TRUE', [id]);
+      return rows[0] || null;
+    } catch (error) {
+      console.error(`Erro ao buscar aluno com ID ${id}:`, error);
+      throw error;
+    }
+  }
+  
+  // Criar um novo aluno
+  async create(aluno) {
+    try {
+      const { nome, email, telefone, data_nascimento, endereco, observacoes } = aluno;
+      
+      const [result] = await pool.query(
+        'INSERT INTO alunos (nome, email, telefone, data_nascimento, endereco, observacoes) VALUES (?, ?, ?, ?, ?, ?)',
+        [nome, email, telefone, data_nascimento, endereco, observacoes]
+      );
+      
+      return { id: result.insertId, ...aluno };
+    } catch (error) {
+      console.error('Erro ao criar aluno:', error);
+      throw error;
+    }
+  }
+  
+  // Atualizar um aluno existente
+  async update(id, aluno) {
+    try {
+      const { nome, email, telefone, data_nascimento, endereco, observacoes } = aluno;
+      
+      await pool.query(
+        'UPDATE alunos SET nome = ?, email = ?, telefone = ?, data_nascimento = ?, endereco = ?, observacoes = ? WHERE id = ?',
+        [nome, email, telefone, data_nascimento, endereco, observacoes, id]
+      );
+      
+      return this.findById(id);
+    } catch (error) {
+      console.error(`Erro ao atualizar aluno com ID ${id}:`, error);
+      throw error;
+    }
+  }
+  
+  // Excluir um aluno (exclusão lógica)
+  async delete(id) {
+    try {
+      await pool.query('UPDATE alunos SET ativo = FALSE WHERE id = ?', [id]);
+      return { success: true, message: 'Aluno excluído com sucesso' };
+    } catch (error) {
+      console.error(`Erro ao excluir aluno com ID ${id}:`, error);
+      throw error;
+    }
+  }
+  
+  // Buscar alunos por nome ou email
+  async search(term) {
+    try {
+      const [rows] = await pool.query(
+        'SELECT * FROM alunos WHERE ativo = TRUE AND (nome LIKE ? OR email LIKE ?)',
+        [`%${term}%`, `%${term}%`]
+      );
+      return rows;
+    } catch (error) {
+      console.error(`Erro ao buscar alunos com termo "${term}":`, error);
+      throw error;
+    }
+  }
+  
+  // Obter matrículas de um aluno
+  async getMatriculas(alunoId) {
+    try {
+      const [rows] = await pool.query(`
+        SELECT m.id, m.data_matricula, m.status, m.observacoes,
+               a.id as aula_id, a.titulo, a.data_hora_inicio, a.data_hora_fim,
+               i.nome as instrutor_nome, mo.nome as modalidade_nome
+        FROM matriculas m
+        JOIN aulas a ON m.aula_id = a.id
+        JOIN instrutores i ON a.instrutor_id = i.id
+        JOIN modalidades mo ON a.modalidade_id = mo.id
+        WHERE m.aluno_id = ?
+        ORDER BY a.data_hora_inicio DESC
+      `, [alunoId]);
+      
+      return rows;
+    } catch (error) {
+      console.error(`Erro ao buscar matrículas do aluno com ID ${alunoId}:`, error);
+      throw error;
+    }
+  }
+}
+
+// Exemplo de uso
+async function exemploDeUso() {
+  const alunoRepo = new AlunoRepository();
+  
+  try {
+    // Listar todos os alunos
+    console.log('Listando todos os alunos:');
+    const alunos = await alunoRepo.findAll();
+    console.log(alunos);
+    
+    // Criar um novo aluno
+    console.log('\nCriando novo aluno:');
+    const novoAluno = await alunoRepo.create({
+      nome: 'Fernanda Lima',
+      email: 'fernanda.lima@exemplo.com',
+      telefone: '(11) 94444-3333',
+      data_nascimento: '1988-09-25',
+      endereco: 'Rua Bela Cintra, 500',
+      observacoes: 'Iniciante em Pilates. Busca melhorar condicionamento físico.'
+    });
+    console.log('Novo aluno criado:', novoAluno);
+    
+    // Buscar aluno por ID
+    console.log('\nBuscando aluno por ID:');
+    const aluno = await alunoRepo.findById(novoAluno.id);
+    console.log('Aluno encontrado:', aluno);
+    
+    // Atualizar aluno
+    console.log('\nAtualizando aluno:');
+    const alunoAtualizado = await alunoRepo.update(novoAluno.id, {
+      ...aluno,
+      telefone: '(11) 94444-5555',
+      observacoes: 'Iniciante em Pilates. Tem experiência prévia com yoga.'
+    });
+    console.log('Aluno atualizado:', alunoAtualizado);
+    
+    // Buscar alunos por termo
+    console.log('\nBuscando alunos por termo:');
+    const alunosBuscados = await alunoRepo.search('Lima');
+    console.log('Alunos encontrados:', alunosBuscados);
+    
+    // Excluir aluno
+    console.log('\nExcluindo aluno:');
+    const resultado = await alunoRepo.delete(novoAluno.id);
+    console.log(resultado);
+    
+  } catch (error) {
+    console.error('Erro no exemplo de uso:', error);
+  } finally {
+    // Encerrar o pool de conexões
+    pool.end();
+  }
+}
+
+// Executar o exemplo
+exemploDeUso();</code></pre>
+                    </div>
+                    
+                    <h2>Exercícios Práticos</h2>
+                    <p>Para fixar os conceitos aprendidos neste módulo, recomendamos a realização dos seguintes exercícios:</p>
+                    
+                    <ol>
+                        <li>Crie um modelo ER para um sistema de gerenciamento de biblioteca.</li>
+                        <li>Implemente o esquema de banco de dados para o modelo ER criado, utilizando MySQL.</li>
+                        <li>Escreva consultas SQL para realizar operações CRUD em um banco de dados de e-commerce.</li>
+                        <li>Desenvolva uma API RESTful que se conecte a um banco de dados MySQL para gerenciar produtos.</li>
+                        <li>Implemente um sistema de autenticação que armazene dados de usuários em um banco de dados.</li>
+                        <li>Crie uma aplicação que utilize MongoDB para armazenar dados de um blog.</li>
+                        <li>Implemente um sistema de logs que armazene informações em um banco de dados.</li>
+                        <li>Desenvolva um módulo de relatórios que utilize consultas SQL avançadas.</li>
+                    </ol>
+                    
+                    <p>Você encontrará mais exercícios e desafios na seção de <a href="../exercicios.html">Exercícios</a>.</p>
+                    
+                    <div class="cta mt-5">
+                        <h3>Pronto para avançar?</h3>
+                        <p>Após dominar os conceitos de Bancos de Dados, você estará preparado para avançar para o próximo módulo.</p>
+                        <a href="scrum.html" class="btn btn-primary">Próximo Módulo: Metodologias Ágeis e Scrum</a>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-nav">
+                        <h3>Módulos do Curso</h3>
+                        <ul>
+                            <li><a href="lpjs.html">1. Lógica de Programação com JavaScript</a></li>
+                            <li><a href="git.html">2. Git, GitHub e GitLab</a></li>
+                            <li><a href="jstob.html">3. JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="pds.html">4. Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="iws.html">5. Introdução a WebServices</a></li>
+                            <li><a href="nodejs.html">6. Node.js</a></li>
+                            <li><a href="nbd.html" class="active">7. Noções de Banco de Dados</a></li>
+                            <li><a href="scrum.html">8. Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Recursos Adicionais</h3>
+                        <div class="recursos-links">
+                            <a href="../recursos.html#videos" class="recurso-link">
+                                <i class="fas fa-video"></i> Vídeos Recomendados
+                            </a>
+                            <a href="../exercicios.html#modulo7" class="recurso-link">
+                                <i class="fas fa-code"></i> Exercícios Práticos
+                            </a>
+                            <a href="https://dev.mysql.com/doc/" target="_blank" class="recurso-link">
+                                <i class="fas fa-book"></i> Documentação MySQL
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Projeto Relacionado</h3>
+                        <div class="projeto-preview">
+                            <h4>Sistema de Gerenciamento para Estúdio de Pilates</h4>
+                            <p>Os conceitos de Banco de Dados serão aplicados na persistência de dados do projeto prático do curso.</p>
+                            <a href="../projeto/index.html" class="btn btn-outline btn-sm">Ver Projeto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Tiago Segato</h2>
+                    <p>Desenvolvimento Backend com JavaScript: Do Zero à Aplicação Completa</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.linkedin.com/in/tiagosegato/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tiagosegato" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.youtube.com/@tiagosegato" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@tiagosegato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/tiagosegato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../sobre.html">Sobre o Curso</a></li>
+                            <li><a href="../estrutura.html">Estrutura</a></li>
+                            <li><a href="../exercicios.html">Exercícios</a></li>
+                            <li><a href="../recursos.html">Recursos</a></li>
+                            <li><a href="../contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Módulos</h3>
+                        <ul>
+                            <li><a href="lpjs.html">Lógica de Programação</a></li>
+                            <li><a href="git.html">Git e GitHub</a></li>
+                            <li><a href="jstob.html">JavaScript e OO</a></li>
+                            <li><a href="pds.html">Padrões de Desenvolvimento</a></li>
+                            <li><a href="iws.html">WebServices</a></li>
+                            <li><a href="nodejs.html">Node.js</a></li>
+                            <li><a href="nbd.html">Banco de Dados</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Projeto</h3>
+                        <ul>
+                            <li><a href="../projeto/index.html">Visão Geral</a></li>
+                            <li><a href="../projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="../projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="../projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="../projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Tiago Segato. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="https://tiagosegato.com/" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    <a href="mailto:contato@tiagosegato.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

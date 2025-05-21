@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padrões de Desenvolvimento de Software | Prof. Tiago Segato</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Prof. Tiago Segato</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../sobre.html">Sobre o Curso</a></li>
+                    <li><a href="../estrutura.html">Estrutura</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active">Módulos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="lpjs.html">Lógica de Programação com JavaScript</a></li>
+                            <li><a href="git.html">Git, GitHub e GitLab</a></li>
+                            <li><a href="jstob.html">JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="pds.html" class="active">Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="iws.html">Introdução a WebServices</a></li>
+                            <li><a href="nodejs.html">Node.js</a></li>
+                            <li><a href="nbd.html">Noções de Banco de Dados</a></li>
+                            <li><a href="scrum.html">Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Projeto <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../projeto/index.html">Visão Geral</a></li>
+                            <li><a href="../projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="../projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="../projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="../projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../exercicios.html">Exercícios</a></li>
+                    <li><a href="../recursos.html">Recursos</a></li>
+                    <li><a href="../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../estrutura.html">Estrutura</a></li>
+                <li>Padrões de Desenvolvimento de Software</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Módulo 4: Padrões de Desenvolvimento de Software</h1>
+            <p>Soluções elegantes para problemas recorrentes no desenvolvimento de software</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-layout">
+                <div class="main-content">
+                    <h2>Visão Geral do Módulo</h2>
+                    <p>Neste módulo, você aprenderá sobre padrões de desenvolvimento de software, que são soluções comprovadas para problemas recorrentes no design e implementação de sistemas. Esses padrões ajudam a criar código mais organizado, reutilizável e fácil de manter, seguindo as melhores práticas da indústria.</p>
+                    
+                    <div class="module-info">
+                        <div class="module-info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Carga Horária</h3>
+                                <p>10 horas</p>
+                            </div>
+                        </div>
+                        <div class="module-info-item">
+                            <i class="fas fa-tasks"></i>
+                            <div>
+                                <h3>Nível</h3>
+                                <p>Intermediário</p>
+                            </div>
+                        </div>
+                        <div class="module-info-item">
+                            <i class="fas fa-code-branch"></i>
+                            <div>
+                                <h3>Pré-requisitos</h3>
+                                <p>Módulos 1, 2 e 3</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Conteúdo Programático</h2>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>1. Introdução aos Padrões de Desenvolvimento</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>O que são padrões de desenvolvimento</li>
+                                    <li>História e evolução dos padrões</li>
+                                    <li>Benefícios da utilização de padrões</li>
+                                    <li>Categorias de padrões (criacionais, estruturais, comportamentais)</li>
+                                    <li>Anti-padrões e quando não usar padrões</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>2. Princípios SOLID</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Single Responsibility Principle (SRP)</li>
+                                    <li>Open/Closed Principle (OCP)</li>
+                                    <li>Liskov Substitution Principle (LSP)</li>
+                                    <li>Interface Segregation Principle (ISP)</li>
+                                    <li>Dependency Inversion Principle (DIP)</li>
+                                    <li>Aplicação dos princípios SOLID em JavaScript</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>3. Padrões de Projeto Criacionais</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Singleton</li>
+                                    <li>Factory Method</li>
+                                    <li>Abstract Factory</li>
+                                    <li>Builder</li>
+                                    <li>Prototype</li>
+                                    <li>Implementação em JavaScript</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>4. Padrões de Projeto Estruturais</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Adapter</li>
+                                    <li>Bridge</li>
+                                    <li>Composite</li>
+                                    <li>Decorator</li>
+                                    <li>Facade</li>
+                                    <li>Flyweight</li>
+                                    <li>Proxy</li>
+                                    <li>Implementação em JavaScript</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>5. Padrões de Projeto Comportamentais</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Chain of Responsibility</li>
+                                    <li>Command</li>
+                                    <li>Iterator</li>
+                                    <li>Mediator</li>
+                                    <li>Observer</li>
+                                    <li>State</li>
+                                    <li>Strategy</li>
+                                    <li>Template Method</li>
+                                    <li>Visitor</li>
+                                    <li>Implementação em JavaScript</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>6. Padrões Arquiteturais</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>MVC (Model-View-Controller)</li>
+                                    <li>MVP (Model-View-Presenter)</li>
+                                    <li>MVVM (Model-View-ViewModel)</li>
+                                    <li>Layered Architecture</li>
+                                    <li>Microservices</li>
+                                    <li>Serverless</li>
+                                    <li>Event-Driven Architecture</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>7. Padrões Específicos para JavaScript</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Module Pattern</li>
+                                    <li>Revealing Module Pattern</li>
+                                    <li>Namespace Pattern</li>
+                                    <li>Immediately Invoked Function Expression (IIFE)</li>
+                                    <li>Mixin Pattern</li>
+                                    <li>Callback Pattern</li>
+                                    <li>Promise Pattern</li>
+                                    <li>Async/Await Pattern</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>8. Padrões para Node.js e Express</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Middleware Pattern</li>
+                                    <li>Dependency Injection</li>
+                                    <li>Repository Pattern</li>
+                                    <li>Service Layer</li>
+                                    <li>Controller-Service-Repository Pattern</li>
+                                    <li>Error Handling Patterns</li>
+                                    <li>Authentication Patterns</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>9. Aplicação Prática de Padrões</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Identificação de problemas que podem ser resolvidos com padrões</li>
+                                    <li>Seleção do padrão adequado para cada situação</li>
+                                    <li>Implementação de padrões em projetos reais</li>
+                                    <li>Refatoração de código utilizando padrões</li>
+                                    <li>Combinação de múltiplos padrões</li>
+                                    <li>Testes de código que utiliza padrões</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Exemplos Práticos</h2>
+                    
+                    <div class="code-example">
+                        <h3>Padrão Singleton</h3>
+                        <pre><code>// Implementação do padrão Singleton em JavaScript
+class DatabaseConnection {
+  constructor() {
+    if (DatabaseConnection.instance) {
+      return DatabaseConnection.instance;
+    }
+    
+    // Simulação de configuração de conexão com banco de dados
+    this.host = 'localhost';
+    this.username = 'admin';
+    this.password = 'password';
+    this.database = 'myapp';
+    this.connection = null;
+    
+    // Armazena a instância
+    DatabaseConnection.instance = this;
+  }
+  
+  connect() {
+    if (this.connection) {
+      console.log('Já conectado ao banco de dados');
+      return this.connection;
+    }
+    
+    console.log(`Conectando ao banco de dados ${this.database} em ${this.host}...`);
+    // Simulação de conexão
+    this.connection = {
+      id: Math.floor(Math.random() * 1000),
+      timestamp: new Date().toISOString()
+    };
+    
+    console.log(`Conexão estabelecida com ID: ${this.connection.id}`);
+    return this.connection;
+  }
+  
+  disconnect() {
+    if (this.connection) {
+      console.log(`Desconectando do banco de dados (ID: ${this.connection.id})...`);
+      this.connection = null;
+      console.log('Desconectado com sucesso');
+    } else {
+      console.log('Não há conexão ativa para desconectar');
+    }
+  }
+  
+  executeQuery(query) {
+    if (!this.connection) {
+      console.log('Não há conexão ativa. Conectando primeiro...');
+      this.connect();
+    }
+    
+    console.log(`Executando query: ${query}`);
+    return `Resultado da query: ${query}`;
+  }
+}
+
+// Uso do Singleton
+function testSingleton() {
+  console.log('Criando primeira instância...');
+  const db1 = new DatabaseConnection();
+  db1.connect();
+  
+  console.log('\nCriando segunda instância...');
+  const db2 = new DatabaseConnection();
+  
+  console.log('\nVerificando se as instâncias são as mesmas:');
+  console.log(`db1 === db2: ${db1 === db2}`);
+  
+  console.log('\nExecutando query na primeira instância:');
+  db1.executeQuery('SELECT * FROM users');
+  
+  console.log('\nExecutando query na segunda instância:');
+  db2.executeQuery('SELECT * FROM products');
+  
+  console.log('\nDesconectando usando a segunda instância:');
+  db2.disconnect();
+  
+  console.log('\nTentando executar query após desconexão:');
+  db1.executeQuery('SELECT * FROM orders');
+}
+
+testSingleton();</code></pre>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h3>Padrão Observer</h3>
+                        <pre><code>// Implementação do padrão Observer em JavaScript
+class Subject {
+  constructor() {
+    this.observers = [];
+  }
+  
+  subscribe(observer) {
+    if (!this.observers.includes(observer)) {
+      this.observers.push(observer);
+      console.log('Observer adicionado');
+    }
+  }
+  
+  unsubscribe(observer) {
+    const index = this.observers.indexOf(observer);
+    if (index !== -1) {
+      this.observers.splice(index, 1);
+      console.log('Observer removido');
+    }
+  }
+  
+  notify(data) {
+    console.log('Notificando observers...');
+    this.observers.forEach(observer => observer.update(data));
+  }
+}
+
+class Observer {
+  constructor(name) {
+    this.name = name;
+  }
+  
+  update(data) {
+    console.log(`${this.name} recebeu atualização: ${JSON.stringify(data)}`);
+  }
+}
+
+// Exemplo de uso: Sistema de notificações
+class NotificationSystem extends Subject {
+  constructor() {
+    super();
+    this.notifications = [];
+  }
+  
+  addNotification(notification) {
+    this.notifications.push({
+      id: this.notifications.length + 1,
+      ...notification,
+      timestamp: new Date().toISOString()
+    });
+    
+    console.log(`Nova notificação: ${notification.message}`);
+    this.notify(notification);
+  }
+  
+  getNotifications() {
+    return this.notifications;
+  }
+}
+
+// Uso do padrão Observer
+function testObserver() {
+  // Criação do sistema de notificações
+  const notificationSystem = new NotificationSystem();
+  
+  // Criação de observers
+  const userObserver = new Observer('Usuário');
+  const adminObserver = new Observer('Administrador');
+  const logObserver = new Observer('Sistema de Log');
+  
+  // Inscrição dos observers
+  notificationSystem.subscribe(userObserver);
+  notificationSystem.subscribe(adminObserver);
+  notificationSystem.subscribe(logObserver);
+  
+  // Adição de notificações
+  notificationSystem.addNotification({
+    type: 'info',
+    message: 'Sistema atualizado para a versão 2.0'
+  });
+  
+  // Cancelamento da inscrição do usuário
+  console.log('\nRemovendo usuário das notificações...\n');
+  notificationSystem.unsubscribe(userObserver);
+  
+  // Nova notificação (não será recebida pelo usuário)
+  notificationSystem.addNotification({
+    type: 'alert',
+    message: 'Manutenção programada para amanhã às 22h'
+  });
+  
+  // Listagem de todas as notificações
+  console.log('\nTodas as notificações:');
+  console.log(notificationSystem.getNotifications());
+}
+
+testObserver();</code></pre>
+                    </div>
+                    
+                    <h2>Exercícios Práticos</h2>
+                    <p>Para fixar os conceitos aprendidos neste módulo, recomendamos a realização dos seguintes exercícios:</p>
+                    
+                    <ol>
+                        <li>Implemente o padrão Singleton para gerenciar a conexão com um banco de dados.</li>
+                        <li>Crie um sistema de notificações utilizando o padrão Observer.</li>
+                        <li>Desenvolva uma fábrica de objetos utilizando o padrão Factory Method.</li>
+                        <li>Implemente o padrão Strategy para diferentes métodos de pagamento em um e-commerce.</li>
+                        <li>Crie uma API simples utilizando o padrão MVC.</li>
+                        <li>Desenvolva um sistema de validação de formulários utilizando o padrão Chain of Responsibility.</li>
+                        <li>Implemente o padrão Repository para acesso a dados em uma aplicação Node.js.</li>
+                        <li>Refatore um código existente aplicando os princípios SOLID.</li>
+                    </ol>
+                    
+                    <p>Você encontrará mais exercícios e desafios na seção de <a href="../exercicios.html">Exercícios</a>.</p>
+                    
+                    <div class="cta mt-5">
+                        <h3>Pronto para avançar?</h3>
+                        <p>Após dominar os conceitos de Padrões de Desenvolvimento de Software, você estará preparado para avançar para o próximo módulo.</p>
+                        <a href="iws.html" class="btn btn-primary">Próximo Módulo: Introdução a WebServices</a>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-nav">
+                        <h3>Módulos do Curso</h3>
+                        <ul>
+                            <li><a href="lpjs.html">1. Lógica de Programação com JavaScript</a></li>
+                            <li><a href="git.html">2. Git, GitHub e GitLab</a></li>
+                            <li><a href="jstob.html">3. JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="pds.html" class="active">4. Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="iws.html">5. Introdução a WebServices</a></li>
+                            <li><a href="nodejs.html">6. Node.js</a></li>
+                            <li><a href="nbd.html">7. Noções de Banco de Dados</a></li>
+                            <li><a href="scrum.html">8. Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Recursos Adicionais</h3>
+                        <div class="recursos-links">
+                            <a href="../recursos.html#videos" class="recurso-link">
+                                <i class="fas fa-video"></i> Vídeos Recomendados
+                            </a>
+                            <a href="../exercicios.html#modulo4" class="recurso-link">
+                                <i class="fas fa-code"></i> Exercícios Práticos
+                            </a>
+                            <a href="https://refactoring.guru/design-patterns" target="_blank" class="recurso-link">
+                                <i class="fas fa-book"></i> Catálogo de Padrões
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Projeto Relacionado</h3>
+                        <div class="projeto-preview">
+                            <h4>Sistema de Gerenciamento para Estúdio de Pilates</h4>
+                            <p>Os padrões de desenvolvimento serão aplicados na arquitetura do projeto prático do curso.</p>
+                            <a href="../projeto/index.html" class="btn btn-outline btn-sm">Ver Projeto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Tiago Segato</h2>
+                    <p>Desenvolvimento Backend com JavaScript: Do Zero à Aplicação Completa</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.linkedin.com/in/tiagosegato/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tiagosegato" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.youtube.com/@tiagosegato" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@tiagosegato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/tiagosegato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../sobre.html">Sobre o Curso</a></li>
+                            <li><a href="../estrutura.html">Estrutura</a></li>
+                            <li><a href="../exercicios.html">Exercícios</a></li>
+                            <li><a href="../recursos.html">Recursos</a></li>
+                            <li><a href="../contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Módulos</h3>
+                        <ul>
+                            <li><a href="lpjs.html">Lógica de Programação</a></li>
+                            <li><a href="git.html">Git e GitHub</a></li>
+                            <li><a href="jstob.html">JavaScript e OO</a></li>
+                            <li><a href="pds.html">Padrões de Desenvolvimento</a></li>
+                            <li><a href="iws.html">WebServices</a></li>
+                            <li><a href="nodejs.html">Node.js</a></li>
+                            <li><a href="nbd.html">Banco de Dados</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Projeto</h3>
+                        <ul>
+                            <li><a href="../projeto/index.html">Visão Geral</a></li>
+                            <li><a href="../projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="../projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="../projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="../projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Tiago Segato. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="https://tiagosegato.com/" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    <a href="mailto:contato@tiagosegato.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
