@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passo a Passo: CRUD de Alunos com Node.js | Prof. Tiago Segato</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Prof. Tiago Segato</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../sobre.html">Sobre o Curso</a></li>
+                    <li><a href="../estrutura.html">Estrutura</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Módulos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../modulos/lpjs.html">Lógica de Programação com JavaScript</a></li>
+                            <li><a href="../modulos/git.html">Git, GitHub e GitLab</a></li>
+                            <li><a href="../modulos/jstob.html">JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="../modulos/pds.html">Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="../modulos/iws.html">Introdução a WebServices</a></li>
+                            <li><a href="../modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="../modulos/nbd.html">Noções de Banco de Dados</a></li>
+                            <li><a href="../modulos/scrum.html">Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active">Projeto <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Visão Geral</a></li>
+                            <li><a href="requisitos.html">Requisitos</a></li>
+                            <li><a href="modelagem.html">Modelagem</a></li>
+                            <li><a href="arquitetura.html">Arquitetura</a></li>
+                            <li><a href="passo-a-passo.html" class="active">Passo a Passo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../exercicios.html">Exercícios</a></li>
+                    <li><a href="../recursos.html">Recursos</a></li>
+                    <li><a href="../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Projeto Prático</a></li>
+                <li>Passo a Passo</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Passo a Passo: CRUD de Alunos com Node.js</h1>
+            <p>Guia completo para implementação do projeto prático</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-layout">
+                <div class="main-content">
+                    <h2>Desenvolvimento do CRUD de Alunos</h2>
+                    <p>Neste guia passo a passo, vamos desenvolver um CRUD básico para gerenciamento de alunos de um estúdio de pilates utilizando Node.js, Express e MySQL. O foco será na simplicidade e clareza, ideal para alunos iniciantes.</p>
+
+                    <div class="tabs">
+                        <div class="tab-nav">
+                            <button class="active" data-tab="configuracao">Configuração</button>
+                            <button data-tab="estrutura">Estrutura</button>
+                            <button data-tab="banco-dados">Banco de Dados</button>
+                            <button data-tab="crud">CRUD</button>
+                            <button data-tab="testes">Testes</button>
+                        </div>
+                        
+                        <div id="configuracao" class="tab-content active">
+                            <h3>Etapa 1: Configuração do Ambiente</h3>
+                            
+                            <h4>1.1 Instalação do Node.js</h4>
+                            <p>Antes de começar, certifique-se de ter o Node.js instalado em seu computador. Você pode baixá-lo em <a href="https://nodejs.org/" target="_blank">nodejs.org</a>.</p>
+                            
+                            <h4>1.2 Criação do Projeto</h4>
+                            <p>Vamos criar um novo diretório para o projeto e inicializar o package.json:</p>
+                            
+                            <div class="code-example">
+                                <h4>Criação do projeto</h4>
+                                <pre><code>mkdir pilates-studio-api
+cd pilates-studio-api
+
+npm init -y</code></pre>
+                            </div>
+                            
+                            <h4>1.3 Instalação das Dependências</h4>
+                            <p>Agora, vamos instalar as dependências necessárias para o projeto:</p>
+                            
+                            <div class="code-example">
+                                <h4>Instalação de dependências</h4>
+                                <pre><code>npm install express mysql2 sequelize dotenv cors
+
+npm install nodemon --save-dev</code></pre>
+                            </div>
+                            
+                            <h4>1.4 Configuração do Nodemon</h4>
+                            <p>Vamos configurar o Nodemon para facilitar o desenvolvimento. Abra o arquivo package.json e adicione o seguinte script:</p>
+                            
+                            <div class="code-example">
+                                <h4>Configuração do package.json</h4>
+                                <pre><code>{
+  "name": "pilates-studio-api",
+  "version": "1.0.0",
+  "description": "API para gerenciamento de estúdio de pilates",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "api",
+    "pilates"
+  ],
+  "author": "Seu Nome",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}</code></pre>
+                            </div>
+                            
+                            <h4>1.5 Configuração das Variáveis de Ambiente</h4>
+                            <p>Crie um arquivo .env na raiz do projeto para armazenar as variáveis de ambiente:</p>
+                            
+                            <div class="code-example">
+                                <h4>Arquivo .env</h4>
+                                <pre><code>PORT=3000
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=sua_senha
+DB_NAME=pilates_studio
+DB_PORT=3306</code></pre>
+                            </div>
+                            
+                            <p>Também crie um arquivo .gitignore para evitar que arquivos sensíveis sejam versionados:</p>
+                            
+                            <div class="code-example">
+                                <h4>Arquivo .gitignore</h4>
+                                <pre><code>node_modules/
+.env
+.DS_Store
+npm-debug.log
+yarn-error.log</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div id="estrutura" class="tab-content">
+                            <h3>Etapa 2: Estrutura Básica da API</h3>
+                            
+                            <h4>2.1 Criação da Estrutura de Diretórios</h4>
+                            <p>Vamos criar a estrutura de diretórios para nosso projeto:</p>
+                            
+                            <div class="code-example">
+                                <h4>Criação de diretórios</h4>
+                                <pre><code>mkdir -p src/config src/controllers src/models src/routes src/middlewares</code></pre>
+                            </div>
+                            
+                            <h4>2.2 Configuração do Servidor</h4>
+                            <p>Vamos criar o arquivo de configuração do servidor em src/config/server.js:</p>
+                            
+                            <div class="code-example">
+                                <h4>src/config/server.js</h4>
+                                <pre><code>require('dotenv').config();
+
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middlewares
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Rota de teste
+app.get('/', (req, res) => {
+  res.json({ message: 'API do Estúdio de Pilates está funcionando!' });
+});
+
+module.exports = { app, PORT };</code></pre>
+                            </div>
+                            
+                            <h4>2.3 Criação do Arquivo Principal</h4>
+                            <p>Agora, vamos criar o arquivo principal da aplicação em src/app.js:</p>
+                            
+                            <div class="code-example">
+                                <h4>src/app.js</h4>
+                                <pre><code>const { app, PORT } = require('./config/server');
+const routes = require('./routes');
+
+// Registrando as rotas
+app.use('/api', routes);
+
+// Iniciando o servidor
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});</code></pre>
+                            </div>
+                            
+                            <h4>2.4 Configuração das Rotas</h4>
+                            <p>Vamos criar o arquivo de rotas principal em src/routes/index.js:</p>
+                            
+                            <div class="code-example">
+                                <h4>src/routes/index.js</h4>
+                                <pre><code>const express = require('express');
+const router = express.Router();
+
+// Importando as rotas de alunos
+const alunosRoutes = require('./alunos');
+
+// Registrando as rotas
+router.use('/alunos', alunosRoutes);
+
+module.exports = router;</code></pre>
+                            </div>
+                            
+                            <p>E o arquivo de rotas específicas para alunos em src/routes/alunos.js:</p>
+                            
+                            <div class="code-example">
+                                <h4>src/routes/alunos.js</h4>
+                                <pre><code>const express = require('express');
+const router = express.Router();
+
+// Rota temporária para teste
+router.get('/', (req, res) => {
+  res.json({ message: 'Rota de alunos funcionando!' });
+});
+
+module.exports = router;</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div id="banco-dados" class="tab-content">
+                            <h3>Etapa 3: Modelagem e Banco de Dados</h3>
+                            
+                            <h4>3.1 Configuração da Conexão com o Banco de Dados</h4>
+                            <p>Vamos criar o arquivo de configuração do banco de dados em src/config/database.js:</p>
+                            
+                            <div class="code-example">
+                                <h4>src/config/database.js</h4>
+                                <pre><code>const { Sequelize } = require('sequelize');
+require('dotenv').config();
+
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASS,
+  {
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: 'mysql',
+    logging: false,
+    define: {
+      timestamps: true,
+      underscored: true,
+      underscoredAll: true,
+    },
+  }
+);
+
+// Testando a conexão
+const testConnection = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log('Conexão com o banco de dados estabelecida com sucesso.');
+  } catch (error) {
+    console.error('Não foi possível conectar ao banco de dados:', error);
+  }
+};
+
+testConnection();
+
+module.exports = sequelize;</code></pre>
+                            </div>
+                            
+                            <h4>3.2 Criação do Modelo de Aluno</h4>
+                            <p>Vamos criar o modelo de Aluno em src/models/Aluno.js:</p>
+                            
+                            <div class="code-example">
+                                <h4>src/models/Aluno.js</h4>
+                                <pre><code>const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
+
+class Aluno extends Model {}
+
+Aluno.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    nome: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
+    telefone: {
+      type: DataTypes.STRING,
+    },
+    dataNascimento: {
+      type: DataTypes.DATEONLY,
+    },
+    ativo: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    },
+  },
+  {
+    sequelize,
+    modelName: 'aluno',
+    timestamps: true,
+  }
+);
+
+module.exports = Aluno;</code></pre>
+                            </div>
+                            
+                            <h4>3.3 Sincronização com o Banco de Dados</h4>
+                            <p>Vamos modificar o arquivo src/app.js para sincronizar o modelo com o banco de dados:</p>
+                            
+                            <div class="code-example">
+                                <h4>src/app.js (atualizado)</h4>
+                                <pre><code>const { app, PORT } = require('./config/server');
+const routes = require('./routes');
+const sequelize = require('./config/database');
+
+// Importando os modelos
+const Aluno = require('./models/Aluno');
+
+// Registrando as rotas
+app.use('/api', routes);
+
+// Sincronizando o banco de dados
+const syncDatabase = async () => {
+  try {
+    await sequelize.sync({ force: false });
+    console.log('Banco de dados sincronizado com sucesso.');
+  } catch (error) {
+    console.error('Erro ao sincronizar o banco de dados:', error);
+  }
+};
+
+// Iniciando o servidor após sincronizar o banco de dados
+syncDatabase().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+  });
+});</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div id="crud" class="tab-content">
+                            <h3>Etapa 4: Implementação do CRUD de Alunos</h3>
+                            
+                            <h4>4.1 Criação do Controlador de Alunos</h4>
+                            <p>Vamos criar o controlador de alunos em src/controllers/alunoController.js:</p>
+                            
+                            <div class="code-example">
+                                <h4>src/controllers/alunoController.js</h4>
+                                <pre><code>const Aluno = require('../models/Aluno');
+
+// Listar todos os alunos
+exports.listarAlunos = async (req, res) => {
+  try {
+    const alunos = await Aluno.findAll();
+    return res.json(alunos);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Erro ao listar alunos' });
+  }
+};
+
+// Buscar um aluno pelo ID
+exports.buscarAluno = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const aluno = await Aluno.findByPk(id);
+    
+    if (!aluno) {
+      return res.status(404).json({ error: 'Aluno não encontrado' });
+    }
+    
+    return res.json(aluno);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Erro ao buscar aluno' });
+  }
+};
+
+// Criar um novo aluno
+exports.criarAluno = async (req, res) => {
+  try {
+    const { nome, email, telefone, dataNascimento } = req.body;
+    
+    // Validação básica
+    if (!nome || !email) {
+      return res.status(400).json({ error: 'Nome e email são obrigatórios' });
+    }
+    
+    const aluno = await Aluno.create({
+      nome,
+      email,
+      telefone,
+      dataNascimento,
+    });
+    
+    return res.status(201).json(aluno);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Erro ao criar aluno' });
+  }
+};
+
+// Atualizar um aluno
+exports.atualizarAluno = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { nome, email, telefone, dataNascimento, ativo } = req.body;
+    
+    const aluno = await Aluno.findByPk(id);
+    
+    if (!aluno) {
+      return res.status(404).json({ error: 'Aluno não encontrado' });
+    }
+    
+    await aluno.update({
+      nome: nome || aluno.nome,
+      email: email || aluno.email,
+      telefone: telefone || aluno.telefone,
+      dataNascimento: dataNascimento || aluno.dataNascimento,
+      ativo: ativo !== undefined ? ativo : aluno.ativo,
+    });
+    
+    return res.json(aluno);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Erro ao atualizar aluno' });
+  }
+};
+
+// Excluir um aluno
+exports.excluirAluno = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const aluno = await Aluno.findByPk(id);
+    
+    if (!aluno) {
+      return res.status(404).json({ error: 'Aluno não encontrado' });
+    }
+    
+    await aluno.destroy();
+    
+    return res.json({ message: 'Aluno excluído com sucesso' });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Erro ao excluir aluno' });
+  }
+};</code></pre>
+                            </div>
+                            
+                            <h4>4.2 Atualização das Rotas de Alunos</h4>
+                            <p>Vamos atualizar o arquivo de rotas de alunos em src/routes/alunos.js:</p>
+                            
+                            <div class="code-example">
+                                <h4>src/routes/alunos.js (atualizado)</h4>
+                                <pre><code>const express = require('express');
+const router = express.Router();
+const alunoController = require('../controllers/alunoController');
+
+// Rotas CRUD para alunos
+router.get('/', alunoController.listarAlunos);
+router.get('/:id', alunoController.buscarAluno);
+router.post('/', alunoController.criarAluno);
+router.put('/:id', alunoController.atualizarAluno);
+router.delete('/:id', alunoController.excluirAluno);
+
+module.exports = router;</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div id="testes" class="tab-content">
+                            <h3>Etapa 5: Testes e Validação</h3>
+                            
+                            <h4>5.1 Executando a Aplicação</h4>
+                            <p>Agora que implementamos o CRUD completo, vamos executar a aplicação:</p>
+                            
+                            <div class="code-example">
+                                <h4>Iniciando o servidor</h4>
+                                <pre><code>npm run dev</code></pre>
+                            </div>
+                            
+                            <h4>5.2 Testando as Rotas com Postman ou Insomnia</h4>
+                            <p>Vamos testar as rotas da API utilizando o Postman ou Insomnia:</p>
+                            
+                            <h5>Criar um aluno (POST /api/alunos)</h5>
+                            <div class="code-example">
+                                <h4>Corpo da requisição (JSON)</h4>
+                                <pre><code>{
+  "nome": "João Silva",
+  "email": "joao.silva@email.com",
+  "telefone": "(11) 98765-4321",
+  "dataNascimento": "1990-01-15"
+}</code></pre>
+                            </div>
+                            
+                            <h5>Listar todos os alunos (GET /api/alunos)</h5>
+                            <p>Esta rota não requer corpo de requisição.</p>
+                            
+                            <h5>Buscar um aluno pelo ID (GET /api/alunos/:id)</h5>
+                            <p>Substitua :id pelo ID do aluno que deseja buscar.</p>
+                            
+                            <h5>Atualizar um aluno (PUT /api/alunos/:id)</h5>
+                            <div class="code-example">
+                                <h4>Corpo da requisição (JSON)</h4>
+                                <pre><code>{
+  "nome": "João Silva Atualizado",
+  "telefone": "(11) 91234-5678"
+}</code></pre>
+                            </div>
+                            
+                            <h5>Excluir um aluno (DELETE /api/alunos/:id)</h5>
+                            <p>Substitua :id pelo ID do aluno que deseja excluir.</p>
+                            
+                            <h4>5.3 Melhorias Futuras</h4>
+                            <p>Algumas melhorias que podem ser implementadas no projeto:</p>
+                            <ul>
+                                <li>Adicionar validação mais robusta com express-validator</li>
+                                <li>Implementar autenticação e autorização</li>
+                                <li>Adicionar paginação na listagem de alunos</li>
+                                <li>Implementar filtros de busca</li>
+                                <li>Adicionar testes automatizados</li>
+                                <li>Criar documentação da API com Swagger</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cta mt-5">
+                        <h3>Pronto para implementar o projeto?</h3>
+                        <p>Siga o passo a passo acima e desenvolva seu próprio sistema de gerenciamento para estúdio de pilates.</p>
+                        <a href="../exercicios.html" class="btn btn-primary">Ver Exercícios Práticos</a>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-nav">
+                        <h3>Projeto Prático</h3>
+                        <ul>
+                            <li><a href="index.html">Visão Geral</a></li>
+                            <li><a href="requisitos.html">Requisitos</a></li>
+                            <li><a href="modelagem.html">Modelagem</a></li>
+                            <li><a href="arquitetura.html">Arquitetura</a></li>
+                            <li><a href="passo-a-passo.html" class="active">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Módulos Relacionados</h3>
+                        <div class="modulos-curso">
+                            <a href="../modulos/nodejs.html" class="modulo-link">
+                                <strong>Node.js</strong><br>
+                                Desenvolvimento de APIs com Express
+                            </a>
+                            <a href="../modulos/nbd.html" class="modulo-link">
+                                <strong>Noções de Banco de Dados</strong><br>
+                                Modelagem e SQL
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Recursos Adicionais</h3>
+                        <ul>
+                            <li><a href="../recursos.html#nodejs">Bibliotecas e Ferramentas</a></li>
+                            <li><a href="../recursos.html#videos">Vídeos Recomendados</a></li>
+                            <li><a href="../exercicios.html#projeto">Exercícios Práticos</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Tiago Segato</h2>
+                    <p>Desenvolvimento Backend com JavaScript: Do Zero à Aplicação Completa</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.linkedin.com/in/tiagosegato/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tiagosegato" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.youtube.com/@tiagosegato" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@tiagosegato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/tiagosegato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../sobre.html">Sobre o Curso</a></li>
+                            <li><a href="../estrutura.html">Estrutura</a></li>
+                            <li><a href="../exercicios.html">Exercícios</a></li>
+                            <li><a href="../recursos.html">Recursos</a></li>
+                            <li><a href="../contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Módulos</h3>
+                        <ul>
+                            <li><a href="../modulos/lpjs.html">Lógica de Programação</a></li>
+                            <li><a href="../modulos/git.html">Git e GitHub</a></li>
+                            <li><a href="../modulos/jstob.html">JavaScript e OO</a></li>
+                            <li><a href="../modulos/pds.html">Padrões de Desenvolvimento</a></li>
+                            <li><a href="../modulos/iws.html">WebServices</a></li>
+                            <li><a href="../modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="../modulos/nbd.html">Banco de Dados</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Projeto</h3>
+                        <ul>
+                            <li><a href="index.html">Visão Geral</a></li>
+                            <li><a href="requisitos.html">Requisitos</a></li>
+                            <li><a href="modelagem.html">Modelagem</a></li>
+                            <li><a href="arquitetura.html">Arquitetura</a></li>
+                            <li><a href="passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Tiago Segato. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="https://tiagosegato.com/" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    <a href="mailto:contato@tiagosegato.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

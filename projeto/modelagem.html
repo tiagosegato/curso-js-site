@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelagem de Dados | Prof. Tiago Segato</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Prof. Tiago Segato</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../sobre.html">Sobre o Curso</a></li>
+                    <li><a href="../estrutura.html">Estrutura</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Módulos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../modulos/lpjs.html">Lógica de Programação com JavaScript</a></li>
+                            <li><a href="../modulos/git.html">Git, GitHub e GitLab</a></li>
+                            <li><a href="../modulos/jstob.html">JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="../modulos/pds.html">Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="../modulos/iws.html">Introdução a WebServices</a></li>
+                            <li><a href="../modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="../modulos/nbd.html">Noções de Banco de Dados</a></li>
+                            <li><a href="../modulos/scrum.html">Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active">Projeto <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Visão Geral</a></li>
+                            <li><a href="requisitos.html">Requisitos</a></li>
+                            <li><a href="modelagem.html" class="active">Modelagem</a></li>
+                            <li><a href="arquitetura.html">Arquitetura</a></li>
+                            <li><a href="passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../exercicios.html">Exercícios</a></li>
+                    <li><a href="../recursos.html">Recursos</a></li>
+                    <li><a href="../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Projeto Prático</a></li>
+                <li>Modelagem</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Modelagem de Dados</h1>
+            <p>Estrutura do banco de dados para o sistema de gerenciamento do estúdio de pilates</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-layout">
+                <div class="main-content">
+                    <h2>Visão Geral da Modelagem</h2>
+                    <p>A modelagem de dados é uma etapa fundamental no desenvolvimento de sistemas, pois define como as informações serão armazenadas e relacionadas no banco de dados. Para o sistema de gerenciamento do estúdio de pilates, foi desenvolvida uma modelagem completa, embora o foco da implementação inicial seja o CRUD básico de alunos.</p>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h3>Modelo Entidade-Relacionamento (ER)</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>O diagrama ER abaixo representa as entidades principais do sistema e seus relacionamentos:</p>
+                            
+                            <div class="diagram-container">
+                                <pre class="diagram">
++---------------+       +---------------+       +---------------+
+|    Aluno      |       |   Instrutor   |       |  Modalidade   |
++---------------+       +---------------+       +---------------+
+| id (PK)       |       | id (PK)       |       | id (PK)       |
+| nome          |       | nome          |       | nome          |
+| email         |       | email         |       | descricao     |
+| telefone      |       | telefone      |       | duracao       |
+| dataNascimento|       | especialidade |       | capacidade    |
+| ativo         |       | ativo         |       |               |
+| createdAt     |       | createdAt     |       | createdAt     |
+| updatedAt     |       | updatedAt     |       | updatedAt     |
++---------------+       +---------------+       +---------------+
+        |                      |                       |
+        |                      |                       |
+        +----------+-----------+-----------------------+
+                   |
+                   v
+          +------------------+
+          |      Aula        |
+          +------------------+
+          | id (PK)          |
+          | data             |
+          | horario          |
+          | alunoId (FK)     |
+          | instrutorId (FK) |
+          | modalidadeId (FK)|
+          | status           |
+          | observacoes      |
+          | createdAt        |
+          | updatedAt        |
+          +------------------+
+                   |
+                   v
+          +------------------+
+          |    Pagamento     |
+          +------------------+
+          | id (PK)          |
+          | alunoId (FK)     |
+          | valor            |
+          | dataPagamento    |
+          | metodoPagamento  |
+          | status           |
+          | createdAt        |
+          | updatedAt        |
+          +------------------+
+                </pre>
+                            </div>
+                            
+                            <p>Este diagrama representa as principais entidades do sistema e seus relacionamentos. Para a implementação inicial do CRUD de alunos, focaremos apenas na entidade Aluno.</p>
+                        </div>
+                    </div>
+                    
+                    <h2>Detalhamento das Entidades</h2>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Aluno</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>A entidade Aluno representa os alunos cadastrados no estúdio de pilates.</p>
+                                
+                                <h4>Atributos:</h4>
+                                <ul>
+                                    <li><strong>id:</strong> Identificador único do aluno (chave primária, auto-incremento)</li>
+                                    <li><strong>nome:</strong> Nome completo do aluno (string, não nulo)</li>
+                                    <li><strong>email:</strong> Email do aluno (string, não nulo, único)</li>
+                                    <li><strong>telefone:</strong> Número de telefone do aluno (string)</li>
+                                    <li><strong>dataNascimento:</strong> Data de nascimento do aluno (date)</li>
+                                    <li><strong>ativo:</strong> Indica se o aluno está ativo no estúdio (boolean, default: true)</li>
+                                    <li><strong>createdAt:</strong> Data de criação do registro (datetime, automático)</li>
+                                    <li><strong>updatedAt:</strong> Data da última atualização do registro (datetime, automático)</li>
+                                </ul>
+                                
+                                <h4>Relacionamentos:</h4>
+                                <ul>
+                                    <li>Um aluno pode participar de várias aulas (1:N com Aula)</li>
+                                    <li>Um aluno pode realizar vários pagamentos (1:N com Pagamento)</li>
+                                </ul>
+                                
+                                <h4>Definição em Sequelize:</h4>
+                                <div class="code-example">
+                                    <pre><code>// models/Aluno.js
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
+
+class Aluno extends Model {}
+
+Aluno.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    nome: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
+    telefone: {
+      type: DataTypes.STRING,
+    },
+    dataNascimento: {
+      type: DataTypes.DATEONLY,
+    },
+    ativo: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    },
+  },
+  {
+    sequelize,
+    modelName: 'aluno',
+    timestamps: true,
+  }
+);
+
+module.exports = Aluno;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Instrutor</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>A entidade Instrutor representa os profissionais que ministram aulas no estúdio de pilates.</p>
+                                
+                                <h4>Atributos:</h4>
+                                <ul>
+                                    <li><strong>id:</strong> Identificador único do instrutor (chave primária, auto-incremento)</li>
+                                    <li><strong>nome:</strong> Nome completo do instrutor (string, não nulo)</li>
+                                    <li><strong>email:</strong> Email do instrutor (string, não nulo, único)</li>
+                                    <li><strong>telefone:</strong> Número de telefone do instrutor (string)</li>
+                                    <li><strong>especialidade:</strong> Área de especialização do instrutor (string)</li>
+                                    <li><strong>ativo:</strong> Indica se o instrutor está ativo no estúdio (boolean, default: true)</li>
+                                    <li><strong>createdAt:</strong> Data de criação do registro (datetime, automático)</li>
+                                    <li><strong>updatedAt:</strong> Data da última atualização do registro (datetime, automático)</li>
+                                </ul>
+                                
+                                <h4>Relacionamentos:</h4>
+                                <ul>
+                                    <li>Um instrutor pode ministrar várias aulas (1:N com Aula)</li>
+                                </ul>
+                                
+                                <p><em>Nota: Esta entidade não será implementada na versão inicial do CRUD.</em></p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Modalidade</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>A entidade Modalidade representa os tipos de aulas oferecidas no estúdio de pilates.</p>
+                                
+                                <h4>Atributos:</h4>
+                                <ul>
+                                    <li><strong>id:</strong> Identificador único da modalidade (chave primária, auto-incremento)</li>
+                                    <li><strong>nome:</strong> Nome da modalidade (string, não nulo)</li>
+                                    <li><strong>descricao:</strong> Descrição detalhada da modalidade (text)</li>
+                                    <li><strong>duracao:</strong> Duração da aula em minutos (integer)</li>
+                                    <li><strong>capacidade:</strong> Número máximo de alunos por aula (integer)</li>
+                                    <li><strong>createdAt:</strong> Data de criação do registro (datetime, automático)</li>
+                                    <li><strong>updatedAt:</strong> Data da última atualização do registro (datetime, automático)</li>
+                                </ul>
+                                
+                                <h4>Relacionamentos:</h4>
+                                <ul>
+                                    <li>Uma modalidade pode ter várias aulas (1:N com Aula)</li>
+                                </ul>
+                                
+                                <p><em>Nota: Esta entidade não será implementada na versão inicial do CRUD.</em></p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Aula</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>A entidade Aula representa as sessões de aula agendadas no estúdio de pilates.</p>
+                                
+                                <h4>Atributos:</h4>
+                                <ul>
+                                    <li><strong>id:</strong> Identificador único da aula (chave primária, auto-incremento)</li>
+                                    <li><strong>data:</strong> Data da aula (date, não nulo)</li>
+                                    <li><strong>horario:</strong> Horário da aula (time, não nulo)</li>
+                                    <li><strong>alunoId:</strong> ID do aluno (chave estrangeira, não nulo)</li>
+                                    <li><strong>instrutorId:</strong> ID do instrutor (chave estrangeira, não nulo)</li>
+                                    <li><strong>modalidadeId:</strong> ID da modalidade (chave estrangeira, não nulo)</li>
+                                    <li><strong>status:</strong> Status da aula (enum: 'agendada', 'concluída', 'cancelada', default: 'agendada')</li>
+                                    <li><strong>observacoes:</strong> Observações sobre a aula (text)</li>
+                                    <li><strong>createdAt:</strong> Data de criação do registro (datetime, automático)</li>
+                                    <li><strong>updatedAt:</strong> Data da última atualização do registro (datetime, automático)</li>
+                                </ul>
+                                
+                                <h4>Relacionamentos:</h4>
+                                <ul>
+                                    <li>Uma aula pertence a um aluno (N:1 com Aluno)</li>
+                                    <li>Uma aula é ministrada por um instrutor (N:1 com Instrutor)</li>
+                                    <li>Uma aula é de uma modalidade específica (N:1 com Modalidade)</li>
+                                </ul>
+                                
+                                <p><em>Nota: Esta entidade não será implementada na versão inicial do CRUD.</em></p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Pagamento</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>A entidade Pagamento representa os pagamentos realizados pelos alunos.</p>
+                                
+                                <h4>Atributos:</h4>
+                                <ul>
+                                    <li><strong>id:</strong> Identificador único do pagamento (chave primária, auto-incremento)</li>
+                                    <li><strong>alunoId:</strong> ID do aluno (chave estrangeira, não nulo)</li>
+                                    <li><strong>valor:</strong> Valor do pagamento (decimal, não nulo)</li>
+                                    <li><strong>dataPagamento:</strong> Data em que o pagamento foi realizado (date, não nulo)</li>
+                                    <li><strong>metodoPagamento:</strong> Método utilizado para o pagamento (enum: 'dinheiro', 'cartão', 'pix', 'transferência')</li>
+                                    <li><strong>status:</strong> Status do pagamento (enum: 'pendente', 'pago', 'cancelado', default: 'pendente')</li>
+                                    <li><strong>createdAt:</strong> Data de criação do registro (datetime, automático)</li>
+                                    <li><strong>updatedAt:</strong> Data da última atualização do registro (datetime, automático)</li>
+                                </ul>
+                                
+                                <h4>Relacionamentos:</h4>
+                                <ul>
+                                    <li>Um pagamento pertence a um aluno (N:1 com Aluno)</li>
+                                </ul>
+                                
+                                <p><em>Nota: Esta entidade não será implementada na versão inicial do CRUD.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Scripts SQL</h2>
+                    <p>Abaixo estão os scripts SQL para criação das tabelas no banco de dados MySQL:</p>
+                    
+                    <div class="code-example">
+                        <h3>Criação do Banco de Dados</h3>
+                        <pre><code>-- Criação do banco de dados
+CREATE DATABASE IF NOT EXISTS pilates_studio;
+USE pilates_studio;</code></pre>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h3>Tabela de Alunos</h3>
+                        <pre><code>-- Tabela de Alunos
+CREATE TABLE IF NOT EXISTS alunos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  telefone VARCHAR(20),
+  data_nascimento DATE,
+  ativo BOOLEAN DEFAULT TRUE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);</code></pre>
+                    </div>
+                    
+                    <p><em>Nota: Os scripts para as demais tabelas não serão implementados na versão inicial do CRUD.</em></p>
+                    
+                    <h2>Considerações sobre a Modelagem</h2>
+                    <p>A modelagem apresentada é completa e abrange todas as entidades necessárias para um sistema de gerenciamento de estúdio de pilates. No entanto, para a implementação inicial do CRUD, focaremos apenas na entidade Aluno, que é a base do sistema.</p>
+                    
+                    <p>As demais entidades (Instrutor, Modalidade, Aula e Pagamento) estão documentadas para referência futura e podem ser implementadas em versões posteriores do sistema, à medida que os alunos avançam no curso e adquirem mais conhecimentos.</p>
+                    
+                    <p>Esta abordagem permite que os alunos iniciantes se concentrem em aprender os conceitos básicos de CRUD com Node.js e Express, sem se sobrecarregar com a complexidade de um sistema completo.</p>
+                    
+                    <div class="cta mt-5">
+                        <h3>Pronto para conhecer a arquitetura do sistema?</h3>
+                        <p>Agora que você conhece a modelagem de dados, vamos avançar para a arquitetura do sistema.</p>
+                        <a href="arquitetura.html" class="btn btn-primary">Ver Arquitetura</a>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-nav">
+                        <h3>Projeto Prático</h3>
+                        <ul>
+                            <li><a href="index.html">Visão Geral</a></li>
+                            <li><a href="requisitos.html">Requisitos</a></li>
+                            <li><a href="modelagem.html" class="active">Modelagem</a></li>
+                            <li><a href="arquitetura.html">Arquitetura</a></li>
+                            <li><a href="passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Módulos Relacionados</h3>
+                        <div class="modulos-curso">
+                            <a href="../modulos/nodejs.html" class="modulo-link">
+                                <strong>Node.js</strong><br>
+                                Desenvolvimento de APIs com Express
+                            </a>
+                            <a href="../modulos/nbd.html" class="modulo-link">
+                                <strong>Noções de Banco de Dados</strong><br>
+                                Modelagem e SQL
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Recursos Adicionais</h3>
+                        <ul>
+                            <li><a href="../recursos.html#nodejs">Bibliotecas e Ferramentas</a></li>
+                            <li><a href="../recursos.html#videos">Vídeos Recomendados</a></li>
+                            <li><a href="../exercicios.html#projeto">Exercícios Práticos</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Tiago Segato</h2>
+                    <p>Desenvolvimento Backend com JavaScript: Do Zero à Aplicação Completa</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.linkedin.com/in/tiagosegato/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tiagosegato" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.youtube.com/@tiagosegato" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@tiagosegato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/tiagosegato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../sobre.html">Sobre o Curso</a></li>
+                            <li><a href="../estrutura.html">Estrutura</a></li>
+                            <li><a href="../exercicios.html">Exercícios</a></li>
+                            <li><a href="../recursos.html">Recursos</a></li>
+                            <li><a href="../contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Módulos</h3>
+                        <ul>
+                            <li><a href="../modulos/lpjs.html">Lógica de Programação</a></li>
+                            <li><a href="../modulos/git.html">Git e GitHub</a></li>
+                            <li><a href="../modulos/jstob.html">JavaScript e OO</a></li>
+                            <li><a href="../modulos/pds.html">Padrões de Desenvolvimento</a></li>
+                            <li><a href="../modulos/iws.html">WebServices</a></li>
+                            <li><a href="../modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="../modulos/nbd.html">Banco de Dados</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Projeto</h3>
+                        <ul>
+                            <li><a href="index.html">Visão Geral</a></li>
+                            <li><a href="requisitos.html">Requisitos</a></li>
+                            <li><a href="modelagem.html">Modelagem</a></li>
+                            <li><a href="arquitetura.html">Arquitetura</a></li>
+                            <li><a href="passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Tiago Segato. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="https://tiagosegato.com/" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    <a href="mailto:contato@tiagosegato.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requisitos do Projeto | Prof. Tiago Segato</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Prof. Tiago Segato</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../sobre.html">Sobre o Curso</a></li>
+                    <li><a href="../estrutura.html">Estrutura</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Módulos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../modulos/lpjs.html">Lógica de Programação com JavaScript</a></li>
+                            <li><a href="../modulos/git.html">Git, GitHub e GitLab</a></li>
+                            <li><a href="../modulos/jstob.html">JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="../modulos/pds.html">Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="../modulos/iws.html">Introdução a WebServices</a></li>
+                            <li><a href="../modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="../modulos/nbd.html">Noções de Banco de Dados</a></li>
+                            <li><a href="../modulos/scrum.html">Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active">Projeto <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Visão Geral</a></li>
+                            <li><a href="requisitos.html" class="active">Requisitos</a></li>
+                            <li><a href="modelagem.html">Modelagem</a></li>
+                            <li><a href="arquitetura.html">Arquitetura</a></li>
+                            <li><a href="passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../exercicios.html">Exercícios</a></li>
+                    <li><a href="../recursos.html">Recursos</a></li>
+                    <li><a href="../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Projeto Prático</a></li>
+                <li>Requisitos</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Requisitos do Projeto</h1>
+            <p>Especificação detalhada do sistema de gerenciamento para estúdio de pilates</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-layout">
+                <div class="main-content">
+                    <h2>Visão Geral dos Requisitos</h2>
+                    <p>O sistema de gerenciamento para estúdio de pilates tem como objetivo principal facilitar o cadastro e gerenciamento de alunos, permitindo um controle eficiente das informações. Abaixo estão detalhados os requisitos funcionais e não funcionais do sistema.</p>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h3>Requisitos Funcionais</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Os requisitos funcionais descrevem as funcionalidades que o sistema deve oferecer aos usuários.</p>
+                            
+                            <h4>RF01 - Gerenciamento de Alunos</h4>
+                            <ul>
+                                <li><strong>RF01.1:</strong> O sistema deve permitir o cadastro de novos alunos com informações como nome, email, telefone e data de nascimento.</li>
+                                <li><strong>RF01.2:</strong> O sistema deve permitir a visualização de todos os alunos cadastrados.</li>
+                                <li><strong>RF01.3:</strong> O sistema deve permitir a visualização detalhada de um aluno específico.</li>
+                                <li><strong>RF01.4:</strong> O sistema deve permitir a atualização dos dados de um aluno.</li>
+                                <li><strong>RF01.5:</strong> O sistema deve permitir a exclusão de um aluno.</li>
+                                <li><strong>RF01.6:</strong> O sistema deve permitir a marcação de um aluno como ativo ou inativo.</li>
+                            </ul>
+                            
+                            <h4>RF02 - Validação de Dados</h4>
+                            <ul>
+                                <li><strong>RF02.1:</strong> O sistema deve validar o formato do email do aluno.</li>
+                                <li><strong>RF02.2:</strong> O sistema deve validar se o nome do aluno foi preenchido.</li>
+                                <li><strong>RF02.3:</strong> O sistema deve validar se o email do aluno é único no sistema.</li>
+                            </ul>
+                            
+                            <h4>RF03 - API RESTful</h4>
+                            <ul>
+                                <li><strong>RF03.1:</strong> O sistema deve fornecer endpoints para todas as operações CRUD de alunos.</li>
+                                <li><strong>RF03.2:</strong> O sistema deve retornar respostas em formato JSON.</li>
+                                <li><strong>RF03.3:</strong> O sistema deve utilizar os métodos HTTP apropriados para cada operação (GET, POST, PUT, DELETE).</li>
+                                <li><strong>RF03.4:</strong> O sistema deve retornar códigos de status HTTP apropriados para cada resposta.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h3>Requisitos Não Funcionais</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Os requisitos não funcionais descrevem características de qualidade que o sistema deve possuir.</p>
+                            
+                            <h4>RNF01 - Desempenho</h4>
+                            <ul>
+                                <li><strong>RNF01.1:</strong> O sistema deve responder a requisições em menos de 1 segundo em condições normais.</li>
+                                <li><strong>RNF01.2:</strong> O sistema deve suportar pelo menos 100 requisições simultâneas.</li>
+                            </ul>
+                            
+                            <h4>RNF02 - Segurança</h4>
+                            <ul>
+                                <li><strong>RNF02.1:</strong> O sistema deve armazenar dados sensíveis de forma segura.</li>
+                                <li><strong>RNF02.2:</strong> O sistema deve implementar validação de entrada para prevenir ataques como SQL Injection.</li>
+                            </ul>
+                            
+                            <h4>RNF03 - Usabilidade</h4>
+                            <ul>
+                                <li><strong>RNF03.1:</strong> A API deve ser intuitiva e seguir padrões RESTful.</li>
+                                <li><strong>RNF03.2:</strong> A API deve fornecer mensagens de erro claras e informativas.</li>
+                            </ul>
+                            
+                            <h4>RNF04 - Manutenibilidade</h4>
+                            <ul>
+                                <li><strong>RNF04.1:</strong> O código deve seguir boas práticas de desenvolvimento e padrões de projeto.</li>
+                                <li><strong>RNF04.2:</strong> O sistema deve ser modular e facilmente extensível.</li>
+                                <li><strong>RNF04.3:</strong> O código deve ser bem documentado.</li>
+                            </ul>
+                            
+                            <h4>RNF05 - Compatibilidade</h4>
+                            <ul>
+                                <li><strong>RNF05.1:</strong> A API deve ser compatível com os principais navegadores e clientes HTTP.</li>
+                                <li><strong>RNF05.2:</strong> O sistema deve funcionar em ambientes Linux e Windows.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h2>Casos de Uso</h2>
+                    <p>Os casos de uso descrevem as interações entre os usuários e o sistema.</p>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>UC01 - Cadastrar Aluno</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p><strong>Ator Principal:</strong> Administrador</p>
+                                <p><strong>Descrição:</strong> Este caso de uso permite ao administrador cadastrar um novo aluno no sistema.</p>
+                                <p><strong>Fluxo Principal:</strong></p>
+                                <ol>
+                                    <li>O administrador envia uma requisição POST para o endpoint /api/alunos com os dados do aluno.</li>
+                                    <li>O sistema valida os dados recebidos.</li>
+                                    <li>O sistema cadastra o aluno no banco de dados.</li>
+                                    <li>O sistema retorna os dados do aluno cadastrado com status 201 (Created).</li>
+                                </ol>
+                                <p><strong>Fluxo Alternativo:</strong></p>
+                                <ol>
+                                    <li>Se os dados forem inválidos, o sistema retorna uma mensagem de erro com status 400 (Bad Request).</li>
+                                    <li>Se o email já estiver cadastrado, o sistema retorna uma mensagem de erro com status 409 (Conflict).</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>UC02 - Listar Alunos</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p><strong>Ator Principal:</strong> Administrador</p>
+                                <p><strong>Descrição:</strong> Este caso de uso permite ao administrador visualizar todos os alunos cadastrados no sistema.</p>
+                                <p><strong>Fluxo Principal:</strong></p>
+                                <ol>
+                                    <li>O administrador envia uma requisição GET para o endpoint /api/alunos.</li>
+                                    <li>O sistema recupera todos os alunos do banco de dados.</li>
+                                    <li>O sistema retorna a lista de alunos com status 200 (OK).</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>UC03 - Buscar Aluno</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p><strong>Ator Principal:</strong> Administrador</p>
+                                <p><strong>Descrição:</strong> Este caso de uso permite ao administrador visualizar os detalhes de um aluno específico.</p>
+                                <p><strong>Fluxo Principal:</strong></p>
+                                <ol>
+                                    <li>O administrador envia uma requisição GET para o endpoint /api/alunos/{id}.</li>
+                                    <li>O sistema busca o aluno com o ID especificado no banco de dados.</li>
+                                    <li>O sistema retorna os dados do aluno com status 200 (OK).</li>
+                                </ol>
+                                <p><strong>Fluxo Alternativo:</strong></p>
+                                <ol>
+                                    <li>Se o aluno não for encontrado, o sistema retorna uma mensagem de erro com status 404 (Not Found).</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>UC04 - Atualizar Aluno</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p><strong>Ator Principal:</strong> Administrador</p>
+                                <p><strong>Descrição:</strong> Este caso de uso permite ao administrador atualizar os dados de um aluno existente.</p>
+                                <p><strong>Fluxo Principal:</strong></p>
+                                <ol>
+                                    <li>O administrador envia uma requisição PUT para o endpoint /api/alunos/{id} com os novos dados do aluno.</li>
+                                    <li>O sistema valida os dados recebidos.</li>
+                                    <li>O sistema atualiza os dados do aluno no banco de dados.</li>
+                                    <li>O sistema retorna os dados atualizados do aluno com status 200 (OK).</li>
+                                </ol>
+                                <p><strong>Fluxo Alternativo:</strong></p>
+                                <ol>
+                                    <li>Se os dados forem inválidos, o sistema retorna uma mensagem de erro com status 400 (Bad Request).</li>
+                                    <li>Se o aluno não for encontrado, o sistema retorna uma mensagem de erro com status 404 (Not Found).</li>
+                                    <li>Se o email já estiver cadastrado para outro aluno, o sistema retorna uma mensagem de erro com status 409 (Conflict).</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>UC05 - Excluir Aluno</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p><strong>Ator Principal:</strong> Administrador</p>
+                                <p><strong>Descrição:</strong> Este caso de uso permite ao administrador excluir um aluno do sistema.</p>
+                                <p><strong>Fluxo Principal:</strong></p>
+                                <ol>
+                                    <li>O administrador envia uma requisição DELETE para o endpoint /api/alunos/{id}.</li>
+                                    <li>O sistema busca o aluno com o ID especificado no banco de dados.</li>
+                                    <li>O sistema exclui o aluno do banco de dados.</li>
+                                    <li>O sistema retorna uma mensagem de sucesso com status 200 (OK).</li>
+                                </ol>
+                                <p><strong>Fluxo Alternativo:</strong></p>
+                                <ol>
+                                    <li>Se o aluno não for encontrado, o sistema retorna uma mensagem de erro com status 404 (Not Found).</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Restrições e Limitações</h2>
+                    <p>As seguintes restrições e limitações se aplicam ao desenvolvimento do sistema:</p>
+                    <ul>
+                        <li>O sistema deve ser desenvolvido utilizando Node.js e Express.</li>
+                        <li>O banco de dados deve ser MySQL.</li>
+                        <li>O sistema deve seguir o padrão de arquitetura MVC.</li>
+                        <li>O sistema deve ser desenvolvido como uma API RESTful.</li>
+                        <li>O sistema deve ser documentado utilizando comentários no código e README.</li>
+                        <li>O sistema deve ser versionado utilizando Git.</li>
+                    </ul>
+                    
+                    <div class="cta mt-5">
+                        <h3>Pronto para começar a modelagem do sistema?</h3>
+                        <p>Agora que você conhece os requisitos, vamos avançar para a modelagem do banco de dados.</p>
+                        <a href="modelagem.html" class="btn btn-primary">Ver Modelagem</a>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-nav">
+                        <h3>Projeto Prático</h3>
+                        <ul>
+                            <li><a href="index.html">Visão Geral</a></li>
+                            <li><a href="requisitos.html" class="active">Requisitos</a></li>
+                            <li><a href="modelagem.html">Modelagem</a></li>
+                            <li><a href="arquitetura.html">Arquitetura</a></li>
+                            <li><a href="passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Módulos Relacionados</h3>
+                        <div class="modulos-curso">
+                            <a href="../modulos/nodejs.html" class="modulo-link">
+                                <strong>Node.js</strong><br>
+                                Desenvolvimento de APIs com Express
+                            </a>
+                            <a href="../modulos/nbd.html" class="modulo-link">
+                                <strong>Noções de Banco de Dados</strong><br>
+                                Modelagem e SQL
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Recursos Adicionais</h3>
+                        <ul>
+                            <li><a href="../recursos.html#nodejs">Bibliotecas e Ferramentas</a></li>
+                            <li><a href="../recursos.html#videos">Vídeos Recomendados</a></li>
+                            <li><a href="../exercicios.html#projeto">Exercícios Práticos</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Tiago Segato</h2>
+                    <p>Desenvolvimento Backend com JavaScript: Do Zero à Aplicação Completa</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.linkedin.com/in/tiagosegato/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tiagosegato" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.youtube.com/@tiagosegato" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@tiagosegato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/tiagosegato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../sobre.html">Sobre o Curso</a></li>
+                            <li><a href="../estrutura.html">Estrutura</a></li>
+                            <li><a href="../exercicios.html">Exercícios</a></li>
+                            <li><a href="../recursos.html">Recursos</a></li>
+                            <li><a href="../contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Módulos</h3>
+                        <ul>
+                            <li><a href="../modulos/lpjs.html">Lógica de Programação</a></li>
+                            <li><a href="../modulos/git.html">Git e GitHub</a></li>
+                            <li><a href="../modulos/jstob.html">JavaScript e OO</a></li>
+                            <li><a href="../modulos/pds.html">Padrões de Desenvolvimento</a></li>
+                            <li><a href="../modulos/iws.html">WebServices</a></li>
+                            <li><a href="../modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="../modulos/nbd.html">Banco de Dados</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Projeto</h3>
+                        <ul>
+                            <li><a href="index.html">Visão Geral</a></li>
+                            <li><a href="requisitos.html">Requisitos</a></li>
+                            <li><a href="modelagem.html">Modelagem</a></li>
+                            <li><a href="arquitetura.html">Arquitetura</a></li>
+                            <li><a href="passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Tiago Segato. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="https://tiagosegato.com/" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    <a href="mailto:contato@tiagosegato.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

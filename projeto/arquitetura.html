@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitetura do Sistema | Prof. Tiago Segato</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Prof. Tiago Segato</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../sobre.html">Sobre o Curso</a></li>
+                    <li><a href="../estrutura.html">Estrutura</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Módulos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../modulos/lpjs.html">Lógica de Programação com JavaScript</a></li>
+                            <li><a href="../modulos/git.html">Git, GitHub e GitLab</a></li>
+                            <li><a href="../modulos/jstob.html">JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="../modulos/pds.html">Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="../modulos/iws.html">Introdução a WebServices</a></li>
+                            <li><a href="../modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="../modulos/nbd.html">Noções de Banco de Dados</a></li>
+                            <li><a href="../modulos/scrum.html">Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active">Projeto <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Visão Geral</a></li>
+                            <li><a href="requisitos.html">Requisitos</a></li>
+                            <li><a href="modelagem.html">Modelagem</a></li>
+                            <li><a href="arquitetura.html" class="active">Arquitetura</a></li>
+                            <li><a href="passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../exercicios.html">Exercícios</a></li>
+                    <li><a href="../recursos.html">Recursos</a></li>
+                    <li><a href="../contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Projeto Prático</a></li>
+                <li>Arquitetura</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Arquitetura do Sistema</h1>
+            <p>Estrutura e organização do projeto para o sistema de gerenciamento do estúdio de pilates</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-layout">
+                <div class="main-content">
+                    <h2>Visão Geral da Arquitetura</h2>
+                    <p>A arquitetura do sistema foi projetada seguindo o padrão MVC (Model-View-Controller), que separa a aplicação em três componentes principais, facilitando a manutenção e evolução do código. Para o projeto do estúdio de pilates, utilizaremos Node.js com Express para criar uma API RESTful.</p>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h3>Padrão MVC</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>O padrão MVC divide a aplicação em três componentes principais:</p>
+                            
+                            <div class="diagram-container">
+                                <pre class="diagram">
++----------------+      +----------------+      +----------------+
+|     Model      |      |    Controller  |      |      View      |
++----------------+      +----------------+      +----------------+
+| Representa os  |      | Processa as    |      | Apresentação   |
+| dados e a      |<---->| requisições e  |<---->| dos dados ao   |
+| lógica de      |      | coordena as    |      | usuário        |
+| negócio        |      | interações     |      | (Frontend)     |
++----------------+      +----------------+      +----------------+
+</pre>
+                            </div>
+                            
+                            <p>No contexto de uma API RESTful:</p>
+                            <ul>
+                                <li><strong>Model:</strong> Representa os dados e a lógica de negócio (Sequelize, MySQL)</li>
+                                <li><strong>Controller:</strong> Processa as requisições HTTP e coordena as interações entre o Model e a resposta</li>
+                                <li><strong>View:</strong> No caso de uma API, são as respostas JSON enviadas ao cliente</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h2>Estrutura de Diretórios</h2>
+                    <p>A estrutura de diretórios do projeto segue as melhores práticas para aplicações Node.js com Express:</p>
+                    
+                    <div class="code-example">
+                        <pre><code>pilates-studio-api/
+├── node_modules/
+├── src/
+│   ├── config/
+│   │   ├── database.js       # Configuração de conexão com o banco de dados
+│   │   └── server.js         # Configuração do servidor Express
+│   ├── controllers/
+│   │   └── alunoController.js # Controlador para operações de alunos
+│   ├── models/
+│   │   └── Aluno.js          # Modelo de dados para alunos
+│   ├── routes/
+│   │   ├── index.js          # Rota principal
+│   │   └── alunoRoutes.js    # Rotas para operações de alunos
+│   ├── middlewares/
+│   │   ├── errorHandler.js   # Middleware para tratamento de erros
+│   │   └── validator.js      # Middleware para validação de dados
+│   ├── utils/
+│   │   └── responseFormatter.js # Utilitário para formatação de respostas
+│   └── app.js                # Ponto de entrada da aplicação
+├── .env                      # Variáveis de ambiente
+├── .gitignore                # Arquivos a serem ignorados pelo Git
+├── package.json              # Dependências e scripts
+└── README.md                 # Documentação do projeto</code></pre>
+                    </div>
+                    
+                    <h2>Componentes da Arquitetura</h2>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Configuração</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>O diretório <code>config</code> contém arquivos de configuração para diferentes aspectos da aplicação:</p>
+                                
+                                <h4>database.js</h4>
+                                <div class="code-example">
+                                    <pre><code>// src/config/database.js
+const { Sequelize } = require('sequelize');
+require('dotenv').config();
+
+const sequelize = new Sequelize(
+  process.env.DB_NAME || 'pilates_studio',
+  process.env.DB_USER || 'root',
+  process.env.DB_PASSWORD || '',
+  {
+    host: process.env.DB_HOST || 'localhost',
+    dialect: 'mysql',
+    logging: false,
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
+    }
+  }
+);
+
+module.exports = sequelize;</code></pre>
+                                </div>
+                                
+                                <h4>server.js</h4>
+                                <div class="code-example">
+                                    <pre><code>// src/config/server.js
+const express = require('express');
+const cors = require('cors');
+const routes = require('../routes');
+const errorHandler = require('../middlewares/errorHandler');
+
+const createServer = () => {
+  const app = express();
+  
+  // Middlewares
+  app.use(cors());
+  app.use(express.json());
+  
+  // Rotas
+  app.use('/api', routes);
+  
+  // Tratamento de erros
+  app.use(errorHandler);
+  
+  return app;
+};
+
+module.exports = createServer;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Models</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>O diretório <code>models</code> contém os modelos de dados da aplicação, utilizando Sequelize como ORM:</p>
+                                
+                                <h4>Aluno.js</h4>
+                                <div class="code-example">
+                                    <pre><code>// src/models/Aluno.js
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
+
+class Aluno extends Model {}
+
+Aluno.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    nome: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
+    telefone: {
+      type: DataTypes.STRING,
+    },
+    dataNascimento: {
+      type: DataTypes.DATEONLY,
+    },
+    ativo: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    },
+  },
+  {
+    sequelize,
+    modelName: 'aluno',
+    timestamps: true,
+  }
+);
+
+module.exports = Aluno;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Controllers</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>O diretório <code>controllers</code> contém os controladores que processam as requisições e coordenam as interações:</p>
+                                
+                                <h4>alunoController.js</h4>
+                                <div class="code-example">
+                                    <pre><code>// src/controllers/alunoController.js
+const Aluno = require('../models/Aluno');
+const { formatResponse } = require('../utils/responseFormatter');
+
+// Criar um novo aluno
+const createAluno = async (req, res, next) => {
+  try {
+    const { nome, email, telefone, dataNascimento, ativo } = req.body;
+    
+    const aluno = await Aluno.create({
+      nome,
+      email,
+      telefone,
+      dataNascimento,
+      ativo
+    });
+    
+    return res.status(201).json(formatResponse(true, 'Aluno criado com sucesso', aluno));
+  } catch (error) {
+    next(error);
+  }
+};
+
+// Listar todos os alunos
+const getAllAlunos = async (req, res, next) => {
+  try {
+    const alunos = await Aluno.findAll();
+    
+    return res.status(200).json(formatResponse(true, 'Alunos recuperados com sucesso', alunos));
+  } catch (error) {
+    next(error);
+  }
+};
+
+// Buscar um aluno pelo ID
+const getAlunoById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    
+    const aluno = await Aluno.findByPk(id);
+    
+    if (!aluno) {
+      return res.status(404).json(formatResponse(false, 'Aluno não encontrado'));
+    }
+    
+    return res.status(200).json(formatResponse(true, 'Aluno recuperado com sucesso', aluno));
+  } catch (error) {
+    next(error);
+  }
+};
+
+// Atualizar um aluno
+const updateAluno = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { nome, email, telefone, dataNascimento, ativo } = req.body;
+    
+    const aluno = await Aluno.findByPk(id);
+    
+    if (!aluno) {
+      return res.status(404).json(formatResponse(false, 'Aluno não encontrado'));
+    }
+    
+    await aluno.update({
+      nome,
+      email,
+      telefone,
+      dataNascimento,
+      ativo
+    });
+    
+    return res.status(200).json(formatResponse(true, 'Aluno atualizado com sucesso', aluno));
+  } catch (error) {
+    next(error);
+  }
+};
+
+// Excluir um aluno
+const deleteAluno = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    
+    const aluno = await Aluno.findByPk(id);
+    
+    if (!aluno) {
+      return res.status(404).json(formatResponse(false, 'Aluno não encontrado'));
+    }
+    
+    await aluno.destroy();
+    
+    return res.status(200).json(formatResponse(true, 'Aluno excluído com sucesso'));
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = {
+  createAluno,
+  getAllAlunos,
+  getAlunoById,
+  updateAluno,
+  deleteAluno
+};</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Routes</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>O diretório <code>routes</code> contém as definições de rotas da API:</p>
+                                
+                                <h4>index.js</h4>
+                                <div class="code-example">
+                                    <pre><code>// src/routes/index.js
+const express = require('express');
+const alunoRoutes = require('./alunoRoutes');
+
+const router = express.Router();
+
+router.use('/alunos', alunoRoutes);
+
+router.get('/', (req, res) => {
+  res.json({ message: 'API do Estúdio de Pilates - v1.0' });
+});
+
+module.exports = router;</code></pre>
+                                </div>
+                                
+                                <h4>alunoRoutes.js</h4>
+                                <div class="code-example">
+                                    <pre><code>// src/routes/alunoRoutes.js
+const express = require('express');
+const alunoController = require('../controllers/alunoController');
+const { validateAlunoData } = require('../middlewares/validator');
+
+const router = express.Router();
+
+// Rotas para alunos
+router.post('/', validateAlunoData, alunoController.createAluno);
+router.get('/', alunoController.getAllAlunos);
+router.get('/:id', alunoController.getAlunoById);
+router.put('/:id', validateAlunoData, alunoController.updateAluno);
+router.delete('/:id', alunoController.deleteAluno);
+
+module.exports = router;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Middlewares</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>O diretório <code>middlewares</code> contém funções de middleware para processamento de requisições:</p>
+                                
+                                <h4>errorHandler.js</h4>
+                                <div class="code-example">
+                                    <pre><code>// src/middlewares/errorHandler.js
+const { formatResponse } = require('../utils/responseFormatter');
+
+const errorHandler = (err, req, res, next) => {
+  console.error(err.stack);
+  
+  // Erro de validação do Sequelize
+  if (err.name === 'SequelizeValidationError') {
+    return res.status(400).json(
+      formatResponse(false, 'Erro de validação', {
+        errors: err.errors.map(e => e.message)
+      })
+    );
+  }
+  
+  // Erro de chave única do Sequelize
+  if (err.name === 'SequelizeUniqueConstraintError') {
+    return res.status(409).json(
+      formatResponse(false, 'Erro de duplicidade', {
+        errors: err.errors.map(e => e.message)
+      })
+    );
+  }
+  
+  // Outros erros
+  return res.status(500).json(
+    formatResponse(false, 'Erro interno do servidor')
+  );
+};
+
+module.exports = errorHandler;</code></pre>
+                                </div>
+                                
+                                <h4>validator.js</h4>
+                                <div class="code-example">
+                                    <pre><code>// src/middlewares/validator.js
+const { formatResponse } = require('../utils/responseFormatter');
+
+const validateAlunoData = (req, res, next) => {
+  const { nome, email } = req.body;
+  const errors = [];
+  
+  if (!nome || nome.trim() === '') {
+    errors.push('O nome é obrigatório');
+  }
+  
+  if (!email || email.trim() === '') {
+    errors.push('O email é obrigatório');
+  } else if (!isValidEmail(email)) {
+    errors.push('O email fornecido não é válido');
+  }
+  
+  if (errors.length > 0) {
+    return res.status(400).json(formatResponse(false, 'Erro de validação', { errors }));
+  }
+  
+  next();
+};
+
+const isValidEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+module.exports = {
+  validateAlunoData
+};</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Utils</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>O diretório <code>utils</code> contém funções utilitárias para a aplicação:</p>
+                                
+                                <h4>responseFormatter.js</h4>
+                                <div class="code-example">
+                                    <pre><code>// src/utils/responseFormatter.js
+const formatResponse = (success, message, data = null) => {
+  const response = {
+    success,
+    message
+  };
+  
+  if (data) {
+    response.data = data;
+  }
+  
+  return response;
+};
+
+module.exports = {
+  formatResponse
+};</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Ponto de Entrada</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>O arquivo <code>app.js</code> é o ponto de entrada da aplicação:</p>
+                                
+                                <h4>app.js</h4>
+                                <div class="code-example">
+                                    <pre><code>// src/app.js
+const createServer = require('./config/server');
+const sequelize = require('./config/database');
+require('dotenv').config();
+
+const app = createServer();
+const PORT = process.env.PORT || 3000;
+
+// Sincronizar o banco de dados
+const syncDatabase = async () => {
+  try {
+    await sequelize.sync();
+    console.log('Banco de dados sincronizado com sucesso');
+  } catch (error) {
+    console.error('Erro ao sincronizar o banco de dados:', error);
+  }
+};
+
+// Iniciar o servidor
+app.listen(PORT, async () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+  await syncDatabase();
+});</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Fluxo de Requisições</h2>
+                    <p>O fluxo de requisições na aplicação segue o seguinte caminho:</p>
+                    
+                    <div class="diagram-container">
+                        <pre class="diagram">
+Cliente HTTP
+    |
+    v
++-------------------+
+|    Requisição     |
++-------------------+
+    |
+    v
++-------------------+
+|     Express       |
++-------------------+
+    |
+    v
++-------------------+
+|    Middlewares    |
+| (CORS, JSON, etc) |
++-------------------+
+    |
+    v
++-------------------+
+|      Rotas        |
++-------------------+
+    |
+    v
++-------------------+
+|   Validação       |
+| (Middleware)      |
++-------------------+
+    |
+    v
++-------------------+
+|   Controller      |
++-------------------+
+    |
+    v
++-------------------+
+|     Model         |
++-------------------+
+    |
+    v
++-------------------+
+|  Banco de Dados   |
++-------------------+
+    |
+    v
++-------------------+
+|    Resposta       |
++-------------------+
+    |
+    v
+Cliente HTTP
+</pre>
+                    </div>
+                    
+                    <h2>Considerações sobre a Arquitetura</h2>
+                    <p>A arquitetura apresentada segue as melhores práticas de desenvolvimento de APIs RESTful com Node.js e Express, com foco na simplicidade e clareza para alunos iniciantes. Alguns pontos importantes:</p>
+                    
+                    <ul>
+                        <li>A separação clara de responsabilidades (MVC) facilita a manutenção e evolução do código.</li>
+                        <li>O uso de middlewares para validação e tratamento de erros centraliza essas funcionalidades.</li>
+                        <li>A estrutura de diretórios organizada torna o projeto mais fácil de navegar.</li>
+                        <li>O uso do Sequelize como ORM simplifica a interação com o banco de dados.</li>
+                        <li>A padronização das respostas da API melhora a experiência do cliente.</li>
+                    </ul>
+                    
+                    <p>Esta arquitetura é escalável e pode ser expandida à medida que novas funcionalidades forem adicionadas ao sistema.</p>
+                    
+                    <div class="cta mt-5">
+                        <h3>Pronto para implementar o sistema?</h3>
+                        <p>Agora que você conhece a arquitetura, vamos avançar para o passo a passo da implementação.</p>
+                        <a href="passo-a-passo.html" class="btn btn-primary">Ver Passo a Passo</a>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-nav">
+                        <h3>Projeto Prático</h3>
+                        <ul>
+                            <li><a href="index.html">Visão Geral</a></li>
+                            <li><a href="requisitos.html">Requisitos</a></li>
+                            <li><a href="modelagem.html">Modelagem</a></li>
+                            <li><a href="arquitetura.html" class="active">Arquitetura</a></li>
+                            <li><a href="passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Módulos Relacionados</h3>
+                        <div class="modulos-curso">
+                            <a href="../modulos/nodejs.html" class="modulo-link">
+                                <strong>Node.js</strong><br>
+                                Desenvolvimento de APIs com Express
+                            </a>
+                            <a href="../modulos/pds.html" class="modulo-link">
+                                <strong>Padrões de Desenvolvimento</strong><br>
+                                MVC e outros padrões
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-nav">
+                        <h3>Recursos Adicionais</h3>
+                        <ul>
+                            <li><a href="../recursos.html#nodejs">Bibliotecas e Ferramentas</a></li>
+                            <li><a href="../recursos.html#videos">Vídeos Recomendados</a></li>
+                            <li><a href="../exercicios.html#projeto">Exercícios Práticos</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Tiago Segato</h2>
+                    <p>Desenvolvimento Backend com JavaScript: Do Zero à Aplicação Completa</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.linkedin.com/in/tiagosegato/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tiagosegato" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.youtube.com/@tiagosegato" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@tiagosegato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/tiagosegato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../sobre.html">Sobre o Curso</a></li>
+                            <li><a href="../estrutura.html">Estrutura</a></li>
+                            <li><a href="../exercicios.html">Exercícios</a></li>
+                            <li><a href="../recursos.html">Recursos</a></li>
+                            <li><a href="../contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Módulos</h3>
+                        <ul>
+                            <li><a href="../modulos/lpjs.html">Lógica de Programação</a></li>
+                            <li><a href="../modulos/git.html">Git e GitHub</a></li>
+                            <li><a href="../modulos/jstob.html">JavaScript e OO</a></li>
+                            <li><a href="../modulos/pds.html">Padrões de Desenvolvimento</a></li>
+                            <li><a href="../modulos/iws.html">WebServices</a></li>
+                            <li><a href="../modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="../modulos/nbd.html">Banco de Dados</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Projeto</h3>
+                        <ul>
+                            <li><a href="index.html">Visão Geral</a></li>
+                            <li><a href="requisitos.html">Requisitos</a></li>
+                            <li><a href="modelagem.html">Modelagem</a></li>
+                            <li><a href="arquitetura.html">Arquitetura</a></li>
+                            <li><a href="passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Tiago Segato. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="https://tiagosegato.com/" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    <a href="mailto:contato@tiagosegato.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
