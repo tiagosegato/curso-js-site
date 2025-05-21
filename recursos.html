@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos | Prof. Tiago Segato</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Prof. Tiago Segato</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre o Curso</a></li>
+                    <li><a href="estrutura.html">Estrutura</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Módulos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="modulos/lpjs.html">Lógica de Programação com JavaScript</a></li>
+                            <li><a href="modulos/git.html">Git, GitHub e GitLab</a></li>
+                            <li><a href="modulos/jstob.html">JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="modulos/pds.html">Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="modulos/iws.html">Introdução a WebServices</a></li>
+                            <li><a href="modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="modulos/nbd.html">Noções de Banco de Dados</a></li>
+                            <li><a href="modulos/scrum.html">Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Projeto <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="projeto/index.html">Visão Geral</a></li>
+                            <li><a href="projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="exercicios.html">Exercícios</a></li>
+                    <li><a href="recursos.html" class="active">Recursos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>Recursos</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Recursos</h1>
+            <p>Materiais complementares para aprofundar seus conhecimentos</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Bibliotecas e Ferramentas</h2>
+                <p>Conheça as principais bibliotecas e ferramentas utilizadas no desenvolvimento backend com JavaScript.</p>
+            </div>
+            
+            <div class="resources-grid" id="nodejs">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Node.js</h3>
+                        <p>Ambiente de execução JavaScript server-side que permite executar código JavaScript fora do navegador.</p>
+                        <a href="https://nodejs.org/" target="_blank" class="btn btn-outline">Site Oficial</a>
+                        <a href="https://nodejs.org/docs/latest/api/" target="_blank" class="btn btn-outline">Documentação</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Express.js</h3>
+                        <p>Framework web minimalista e flexível para Node.js que fornece um conjunto robusto de recursos para aplicativos web e móveis.</p>
+                        <a href="https://expressjs.com/" target="_blank" class="btn btn-outline">Site Oficial</a>
+                        <a href="https://expressjs.com/en/4x/api.html" target="_blank" class="btn btn-outline">Documentação</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Sequelize</h3>
+                        <p>ORM (Object-Relational Mapping) baseado em promessas para Node.js, que suporta PostgreSQL, MySQL, SQLite e MSSQL.</p>
+                        <a href="https://sequelize.org/" target="_blank" class="btn btn-outline">Site Oficial</a>
+                        <a href="https://sequelize.org/master/" target="_blank" class="btn btn-outline">Documentação</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Jest</h3>
+                        <p>Framework de teste JavaScript com foco na simplicidade, que funciona com projetos usando Babel, TypeScript, Node.js, React, Angular e Vue.js.</p>
+                        <a href="https://jestjs.io/" target="_blank" class="btn btn-outline">Site Oficial</a>
+                        <a href="https://jestjs.io/docs/getting-started" target="_blank" class="btn btn-outline">Documentação</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>ESLint</h3>
+                        <p>Ferramenta de análise de código estático para identificar padrões problemáticos encontrados no código JavaScript.</p>
+                        <a href="https://eslint.org/" target="_blank" class="btn btn-outline">Site Oficial</a>
+                        <a href="https://eslint.org/docs/user-guide/getting-started" target="_blank" class="btn btn-outline">Documentação</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>JWT (JSON Web Tokens)</h3>
+                        <p>Método compacto e autônomo para transmitir informações com segurança entre as partes como um objeto JSON.</p>
+                        <a href="https://jwt.io/" target="_blank" class="btn btn-outline">Site Oficial</a>
+                        <a href="https://github.com/auth0/node-jsonwebtoken" target="_blank" class="btn btn-outline">Documentação</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-header mt-5">
+                <h2>Materiais de Estudo</h2>
+                <p>Livros, cursos e tutoriais recomendados para aprofundar seus conhecimentos.</p>
+            </div>
+            
+            <div class="resources-list">
+                <h3>Livros Recomendados</h3>
+                <ul class="resource-items">
+                    <li>
+                        <strong>Eloquent JavaScript</strong> - Marijn Haverbeke
+                        <p>Uma introdução moderna à programação JavaScript, cobrindo desde os fundamentos até tópicos avançados.</p>
+                        <a href="https://eloquentjavascript.net/" target="_blank">Disponível online gratuitamente</a>
+                    </li>
+                    <li>
+                        <strong>You Don't Know JS</strong> - Kyle Simpson
+                        <p>Série de livros que mergulha profundamente nos mecanismos da linguagem JavaScript.</p>
+                        <a href="https://github.com/getify/You-Dont-Know-JS" target="_blank">Disponível no GitHub</a>
+                    </li>
+                    <li>
+                        <strong>Node.js Design Patterns</strong> - Mario Casciaro e Luciano Mammino
+                        <p>Guia prático para implementar padrões de design em aplicações Node.js.</p>
+                    </li>
+                    <li>
+                        <strong>Clean Code: A Handbook of Agile Software Craftsmanship</strong> - Robert C. Martin
+                        <p>Princípios e práticas para escrever código limpo e manutenível.</p>
+                    </li>
+                </ul>
+                
+                <h3 id="videos">Vídeos e Canais Recomendados</h3>
+                <ul class="resource-items">
+                    <li>
+                        <strong>Canal do Prof. Tiago Segato</strong>
+                        <p>Tutoriais e dicas sobre desenvolvimento web, JavaScript e Node.js.</p>
+                        <a href="https://www.youtube.com/@tiagosegato" target="_blank">Acessar Canal</a>
+                    </li>
+                    <li>
+                        <strong>Traversy Media</strong>
+                        <p>Tutoriais práticos sobre desenvolvimento web, incluindo Node.js e Express.</p>
+                        <a href="https://www.youtube.com/user/TechGuyWeb" target="_blank">Acessar Canal</a>
+                    </li>
+                    <li>
+                        <strong>Academind</strong>
+                        <p>Tutoriais detalhados sobre JavaScript, Node.js e frameworks modernos.</p>
+                        <a href="https://www.youtube.com/c/Academind" target="_blank">Acessar Canal</a>
+                    </li>
+                    <li>
+                        <strong>The Net Ninja</strong>
+                        <p>Séries de tutoriais sobre desenvolvimento web, incluindo Node.js e Express.</p>
+                        <a href="https://www.youtube.com/c/TheNetNinja" target="_blank">Acessar Canal</a>
+                    </li>
+                </ul>
+                
+                <h3>Documentações Oficiais</h3>
+                <ul class="resource-items">
+                    <li>
+                        <strong>MDN Web Docs - JavaScript</strong>
+                        <p>Documentação completa sobre JavaScript, mantida pela Mozilla.</p>
+                        <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank">Acessar Documentação</a>
+                    </li>
+                    <li>
+                        <strong>Node.js Documentation</strong>
+                        <p>Documentação oficial do Node.js, incluindo API, guias e tutoriais.</p>
+                        <a href="https://nodejs.org/en/docs/" target="_blank">Acessar Documentação</a>
+                    </li>
+                    <li>
+                        <strong>Express.js Documentation</strong>
+                        <p>Documentação oficial do Express.js, com guias e referência da API.</p>
+                        <a href="https://expressjs.com/pt-br/" target="_blank">Acessar Documentação</a>
+                    </li>
+                    <li>
+                        <strong>Sequelize Documentation</strong>
+                        <p>Documentação oficial do Sequelize ORM, com guias e exemplos.</p>
+                        <a href="https://sequelize.org/master/" target="_blank">Acessar Documentação</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="section-header mt-5">
+                <h2>Comunidades e Fóruns</h2>
+                <p>Participe de comunidades e fóruns para trocar experiências e tirar dúvidas.</p>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fab fa-stack-overflow"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Stack Overflow</h3>
+                        <p>Maior comunidade de perguntas e respostas para programadores.</p>
+                        <a href="https://stackoverflow.com/questions/tagged/javascript" target="_blank" class="btn btn-outline">JavaScript</a>
+                        <a href="https://stackoverflow.com/questions/tagged/node.js" target="_blank" class="btn btn-outline">Node.js</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>GitHub</h3>
+                        <p>Plataforma de hospedagem de código-fonte com controle de versão usando Git.</p>
+                        <a href="https://github.com/topics/javascript" target="_blank" class="btn btn-outline">JavaScript</a>
+                        <a href="https://github.com/topics/nodejs" target="_blank" class="btn btn-outline">Node.js</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Discord</h3>
+                        <p>Comunidades de desenvolvedores no Discord para discussões em tempo real.</p>
+                        <a href="https://discord.com/invite/javascript" target="_blank" class="btn btn-outline">JavaScript</a>
+                        <a href="https://discord.com/invite/node-js" target="_blank" class="btn btn-outline">Node.js</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fab fa-reddit"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Reddit</h3>
+                        <p>Comunidades (subreddits) dedicadas a JavaScript e Node.js.</p>
+                        <a href="https://www.reddit.com/r/javascript/" target="_blank" class="btn btn-outline">r/javascript</a>
+                        <a href="https://www.reddit.com/r/node/" target="_blank" class="btn btn-outline">r/node</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta mt-5">
+                <h3>Pronto para aplicar seus conhecimentos?</h3>
+                <p>Explore os exercícios práticos e comece a desenvolver o projeto do curso.</p>
+                <a href="exercicios.html" class="btn btn-primary">Ver Exercícios</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Tiago Segato</h2>
+                    <p>Desenvolvimento Backend com JavaScript: Do Zero à Aplicação Completa</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.linkedin.com/in/tiagosegato/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tiagosegato" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.youtube.com/@tiagosegato" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@tiagosegato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/tiagosegato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="sobre.html">Sobre o Curso</a></li>
+                            <li><a href="estrutura.html">Estrutura</a></li>
+                            <li><a href="exercicios.html">Exercícios</a></li>
+                            <li><a href="recursos.html">Recursos</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Módulos</h3>
+                        <ul>
+                            <li><a href="modulos/lpjs.html">Lógica de Programação</a></li>
+                            <li><a href="modulos/git.html">Git e GitHub</a></li>
+                            <li><a href="modulos/jstob.html">JavaScript e OO</a></li>
+                            <li><a href="modulos/pds.html">Padrões de Desenvolvimento</a></li>
+                            <li><a href="modulos/iws.html">WebServices</a></li>
+                            <li><a href="modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="modulos/nbd.html">Banco de Dados</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Projeto</h3>
+                        <ul>
+                            <li><a href="projeto/index.html">Visão Geral</a></li>
+                            <li><a href="projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Tiago Segato. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="https://tiagosegato.com/" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    <a href="mailto:contato@tiagosegato.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

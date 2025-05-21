@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios Práticos | Prof. Tiago Segato</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Prof. Tiago Segato</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre o Curso</a></li>
+                    <li><a href="estrutura.html">Estrutura</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Módulos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="modulos/lpjs.html">Lógica de Programação com JavaScript</a></li>
+                            <li><a href="modulos/git.html">Git, GitHub e GitLab</a></li>
+                            <li><a href="modulos/jstob.html">JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="modulos/pds.html">Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="modulos/iws.html">Introdução a WebServices</a></li>
+                            <li><a href="modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="modulos/nbd.html">Noções de Banco de Dados</a></li>
+                            <li><a href="modulos/scrum.html">Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Projeto <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="projeto/index.html">Visão Geral</a></li>
+                            <li><a href="projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="exercicios.html" class="active">Exercícios</a></li>
+                    <li><a href="recursos.html">Recursos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>Exercícios Práticos</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Exercícios Práticos</h1>
+            <p>Fixe seu conhecimento com exercícios práticos para cada módulo do curso</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Exercícios por Módulo</h2>
+                <p>Pratique os conceitos aprendidos em cada módulo com exercícios específicos.</p>
+            </div>
+            
+            <div class="accordion" id="exercicios-accordion">
+                <div class="accordion-item" id="modulo1">
+                    <div class="accordion-header">
+                        <span>Módulo 1: Lógica de Programação com JavaScript</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <h3>Exercício 1: Calculadora Simples</h3>
+                        <p>Desenvolva uma calculadora simples que realize as quatro operações básicas (adição, subtração, multiplicação e divisão).</p>
+                        <div class="code-example">
+                            <h4>Requisitos:</h4>
+                            <ul>
+                                <li>Criar funções para cada operação</li>
+                                <li>Implementar validação de entrada</li>
+                                <li>Tratar divisão por zero</li>
+                                <li>Exibir o resultado no console</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Exercício 2: Verificador de Palíndromos</h3>
+                        <p>Crie uma função que verifique se uma palavra ou frase é um palíndromo (lê-se igual de trás para frente, desconsiderando espaços e pontuação).</p>
+                        <div class="code-example">
+                            <h4>Exemplos de palíndromos:</h4>
+                            <ul>
+                                <li>"ana"</li>
+                                <li>"radar"</li>
+                                <li>"socorram-me subi no onibus em marrocos"</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Exercício 3: Conversor de Temperatura</h3>
+                        <p>Desenvolva um programa que converta temperaturas entre Celsius, Fahrenheit e Kelvin.</p>
+                        <div class="code-example">
+                            <h4>Fórmulas de conversão:</h4>
+                            <ul>
+                                <li>Celsius para Fahrenheit: (C × 9/5) + 32</li>
+                                <li>Celsius para Kelvin: C + 273.15</li>
+                                <li>Fahrenheit para Celsius: (F - 32) × 5/9</li>
+                                <li>Fahrenheit para Kelvin: (F - 32) × 5/9 + 273.15</li>
+                                <li>Kelvin para Celsius: K - 273.15</li>
+                                <li>Kelvin para Fahrenheit: (K - 273.15) × 9/5 + 32</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" id="modulo2">
+                    <div class="accordion-header">
+                        <span>Módulo 2: Git, GitHub e GitLab</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <h3>Exercício 1: Configuração do Git</h3>
+                        <p>Configure o Git em sua máquina local e crie um repositório para os exercícios do curso.</p>
+                        <div class="code-example">
+                            <h4>Passos:</h4>
+                            <ol>
+                                <li>Instalar o Git (se ainda não estiver instalado)</li>
+                                <li>Configurar nome de usuário e email</li>
+                                <li>Criar um novo repositório local</li>
+                                <li>Adicionar um arquivo README.md</li>
+                                <li>Fazer o primeiro commit</li>
+                            </ol>
+                        </div>
+                        
+                        <h3>Exercício 2: Trabalhando com Branches</h3>
+                        <p>Pratique o trabalho com branches criando uma feature simples e mesclando-a ao branch principal.</p>
+                        <div class="code-example">
+                            <h4>Passos:</h4>
+                            <ol>
+                                <li>Criar um branch chamado "feature/calculadora"</li>
+                                <li>Adicionar o código da calculadora do Módulo 1</li>
+                                <li>Fazer commit das alterações</li>
+                                <li>Voltar ao branch principal</li>
+                                <li>Mesclar o branch "feature/calculadora"</li>
+                                <li>Resolver conflitos (se houver)</li>
+                            </ol>
+                        </div>
+                        
+                        <h3>Exercício 3: GitHub e Colaboração</h3>
+                        <p>Crie um repositório no GitHub e pratique o fluxo de trabalho colaborativo.</p>
+                        <div class="code-example">
+                            <h4>Passos:</h4>
+                            <ol>
+                                <li>Criar um repositório no GitHub</li>
+                                <li>Conectar o repositório local ao remoto</li>
+                                <li>Enviar os branches locais para o remoto</li>
+                                <li>Simular uma colaboração (criar um branch, fazer alterações, enviar para o remoto)</li>
+                                <li>Criar um pull request</li>
+                                <li>Revisar e mesclar o pull request</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" id="modulo3">
+                    <div class="accordion-header">
+                        <span>Módulo 3: JavaScript e Orientação a Objetos</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <h3>Exercício 1: Criação de Classes</h3>
+                        <p>Crie uma classe Pessoa com atributos e métodos, e depois crie subclasses para tipos específicos de pessoas.</p>
+                        <div class="code-example">
+                            <h4>Requisitos:</h4>
+                            <ul>
+                                <li>Classe Pessoa com atributos nome, idade, email</li>
+                                <li>Métodos para obter e modificar atributos</li>
+                                <li>Subclasse Aluno com atributos adicionais (matrícula, curso)</li>
+                                <li>Subclasse Professor com atributos adicionais (disciplina, salário)</li>
+                                <li>Implementar polimorfismo em um método comum</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Exercício 2: Sistema de Biblioteca</h3>
+                        <p>Desenvolva um sistema simples de biblioteca utilizando conceitos de OO.</p>
+                        <div class="code-example">
+                            <h4>Classes a serem implementadas:</h4>
+                            <ul>
+                                <li>Livro (título, autor, ISBN, disponível)</li>
+                                <li>Usuário (nome, ID, livros emprestados)</li>
+                                <li>Biblioteca (coleção de livros, métodos para emprestar e devolver)</li>
+                            </ul>
+                            <h4>Funcionalidades:</h4>
+                            <ul>
+                                <li>Cadastrar livros e usuários</li>
+                                <li>Emprestar livros</li>
+                                <li>Devolver livros</li>
+                                <li>Listar livros disponíveis</li>
+                                <li>Listar livros emprestados por usuário</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Exercício 3: Implementação de Padrões de Projeto</h3>
+                        <p>Implemente um dos padrões de projeto estudados em um contexto prático.</p>
+                        <div class="code-example">
+                            <h4>Opções de padrões:</h4>
+                            <ul>
+                                <li>Singleton para um gerenciador de configurações</li>
+                                <li>Factory para criação de diferentes tipos de documentos</li>
+                                <li>Observer para um sistema de notificações</li>
+                                <li>Strategy para diferentes métodos de pagamento</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" id="modulo6">
+                    <div class="accordion-header">
+                        <span>Módulo 6: Node.js</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <h3>Exercício 1: Servidor HTTP Básico</h3>
+                        <p>Crie um servidor HTTP básico utilizando o módulo http do Node.js.</p>
+                        <div class="code-example">
+                            <h4>Requisitos:</h4>
+                            <ul>
+                                <li>Servidor que responda a requisições GET</li>
+                                <li>Rota principal que retorne uma mensagem de boas-vindas</li>
+                                <li>Rota /info que retorne informações sobre o servidor</li>
+                                <li>Tratamento de rotas não encontradas</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Exercício 2: API REST com Express</h3>
+                        <p>Desenvolva uma API REST simples para gerenciar uma lista de tarefas.</p>
+                        <div class="code-example">
+                            <h4>Funcionalidades:</h4>
+                            <ul>
+                                <li>Listar todas as tarefas (GET /tarefas)</li>
+                                <li>Obter uma tarefa específica (GET /tarefas/:id)</li>
+                                <li>Criar uma nova tarefa (POST /tarefas)</li>
+                                <li>Atualizar uma tarefa (PUT /tarefas/:id)</li>
+                                <li>Excluir uma tarefa (DELETE /tarefas/:id)</li>
+                            </ul>
+                            <h4>Estrutura da tarefa:</h4>
+                            <ul>
+                                <li>id: número único</li>
+                                <li>titulo: string</li>
+                                <li>descricao: string</li>
+                                <li>concluida: boolean</li>
+                                <li>dataCriacao: date</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Exercício 3: Integração com Banco de Dados</h3>
+                        <p>Expanda o exercício anterior integrando-o com um banco de dados MySQL.</p>
+                        <div class="code-example">
+                            <h4>Requisitos:</h4>
+                            <ul>
+                                <li>Configurar conexão com MySQL</li>
+                                <li>Criar modelo de Tarefa com Sequelize</li>
+                                <li>Implementar operações CRUD utilizando o modelo</li>
+                                <li>Adicionar validação de dados</li>
+                                <li>Implementar tratamento de erros</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" id="projeto">
+                    <div class="accordion-header">
+                        <span>Projeto Prático: Sistema de Gerenciamento para Estúdio de Pilates</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <h3>Exercício 1: Configuração Inicial do Projeto</h3>
+                        <p>Configure o ambiente de desenvolvimento e a estrutura básica do projeto.</p>
+                        <div class="code-example">
+                            <h4>Tarefas:</h4>
+                            <ol>
+                                <li>Inicializar o projeto com npm</li>
+                                <li>Instalar dependências necessárias</li>
+                                <li>Configurar estrutura de diretórios</li>
+                                <li>Criar arquivo de configuração do servidor</li>
+                                <li>Implementar rota de teste</li>
+                            </ol>
+                        </div>
+                        
+                        <h3>Exercício 2: Modelagem do Banco de Dados</h3>
+                        <p>Crie o modelo de banco de dados para o sistema de gerenciamento do estúdio de pilates.</p>
+                        <div class="code-example">
+                            <h4>Tarefas:</h4>
+                            <ol>
+                                <li>Criar banco de dados MySQL</li>
+                                <li>Definir modelo de Aluno</li>
+                                <li>Configurar conexão com o banco de dados</li>
+                                <li>Sincronizar modelo com o banco de dados</li>
+                            </ol>
+                        </div>
+                        
+                        <h3>Exercício 3: Implementação do CRUD de Alunos</h3>
+                        <p>Implemente as operações CRUD para o gerenciamento de alunos.</p>
+                        <div class="code-example">
+                            <h4>Tarefas:</h4>
+                            <ol>
+                                <li>Criar controlador de alunos</li>
+                                <li>Implementar rota para listar alunos</li>
+                                <li>Implementar rota para buscar aluno por ID</li>
+                                <li>Implementar rota para criar aluno</li>
+                                <li>Implementar rota para atualizar aluno</li>
+                                <li>Implementar rota para excluir aluno</li>
+                                <li>Adicionar validação de dados</li>
+                                <li>Implementar tratamento de erros</li>
+                            </ol>
+                        </div>
+                        
+                        <h3>Exercício 4: Testes e Documentação</h3>
+                        <p>Teste a API e crie documentação para as rotas implementadas.</p>
+                        <div class="code-example">
+                            <h4>Tarefas:</h4>
+                            <ol>
+                                <li>Testar todas as rotas utilizando Postman ou Insomnia</li>
+                                <li>Documentar as rotas da API</li>
+                                <li>Criar README com instruções de instalação e uso</li>
+                                <li>Adicionar comentários explicativos no código</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta mt-5">
+                <h3>Pronto para praticar?</h3>
+                <p>Resolva os exercícios propostos e aplique os conhecimentos adquiridos no curso.</p>
+                <a href="projeto/index.html" class="btn btn-primary">Ver Projeto Prático</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Tiago Segato</h2>
+                    <p>Desenvolvimento Backend com JavaScript: Do Zero à Aplicação Completa</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.linkedin.com/in/tiagosegato/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tiagosegato" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.youtube.com/@tiagosegato" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@tiagosegato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/tiagosegato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="sobre.html">Sobre o Curso</a></li>
+                            <li><a href="estrutura.html">Estrutura</a></li>
+                            <li><a href="exercicios.html">Exercícios</a></li>
+                            <li><a href="recursos.html">Recursos</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Módulos</h3>
+                        <ul>
+                            <li><a href="modulos/lpjs.html">Lógica de Programação</a></li>
+                            <li><a href="modulos/git.html">Git e GitHub</a></li>
+                            <li><a href="modulos/jstob.html">JavaScript e OO</a></li>
+                            <li><a href="modulos/pds.html">Padrões de Desenvolvimento</a></li>
+                            <li><a href="modulos/iws.html">WebServices</a></li>
+                            <li><a href="modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="modulos/nbd.html">Banco de Dados</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Projeto</h3>
+                        <ul>
+                            <li><a href="projeto/index.html">Visão Geral</a></li>
+                            <li><a href="projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Tiago Segato. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="https://tiagosegato.com/" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    <a href="mailto:contato@tiagosegato.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

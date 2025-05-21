@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Prof. Tiago Segato</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Prof. Tiago Segato</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre o Curso</a></li>
+                    <li><a href="estrutura.html">Estrutura</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Módulos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="modulos/lpjs.html">Lógica de Programação com JavaScript</a></li>
+                            <li><a href="modulos/git.html">Git, GitHub e GitLab</a></li>
+                            <li><a href="modulos/jstob.html">JavaScript e Orientação a Objetos</a></li>
+                            <li><a href="modulos/pds.html">Padrões de Desenvolvimento de Software</a></li>
+                            <li><a href="modulos/iws.html">Introdução a WebServices</a></li>
+                            <li><a href="modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="modulos/nbd.html">Noções de Banco de Dados</a></li>
+                            <li><a href="modulos/scrum.html">Metodologias Ágeis e Scrum</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Projeto <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="projeto/index.html">Visão Geral</a></li>
+                            <li><a href="projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="exercicios.html">Exercícios</a></li>
+                    <li><a href="recursos.html">Recursos</a></li>
+                    <li><a href="contato.html" class="active">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>Contato</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Contato</h1>
+            <p>Entre em contato para dúvidas, sugestões ou mais informações sobre o curso</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-info">
+                        <h2>Informações de Contato</h2>
+                        <p>Estou à disposição para esclarecer dúvidas, receber sugestões ou fornecer mais informações sobre o curso de JavaScript Backend.</p>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p><a href="mailto:contato@tiagosegato.com">contato@tiagosegato.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <h3>Website</h3>
+                                <p><a href="https://tiagosegato.com" target="_blank">tiagosegato.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fab fa-youtube"></i>
+                            <div>
+                                <h3>Canal no YouTube</h3>
+                                <p><a href="https://www.youtube.com/@tiagosegato" target="_blank">youtube.com/@tiagosegato</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin-in"></i>
+                            <div>
+                                <h3>LinkedIn</h3>
+                                <p><a href="https://www.linkedin.com/in/tiagosegato/" target="_blank">linkedin.com/in/tiagosegato</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <h3>GitHub</h3>
+                                <p><a href="https://github.com/tiagosegato" target="_blank">github.com/tiagosegato</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="contact-form">
+                        <h2>Envie uma Mensagem</h2>
+                        <p>Preencha o formulário abaixo para entrar em contato diretamente comigo.</p>
+                        
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Nome</label>
+                                <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Seu email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Assunto</label>
+                                <input type="text" id="subject" name="subject" placeholder="Assunto da mensagem" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Mensagem</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Sua mensagem" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-header mt-5">
+                <h2>Perguntas Frequentes</h2>
+                <p>Confira as respostas para as dúvidas mais comuns sobre o curso.</p>
+            </div>
+            
+            <div class="accordion" id="faq-accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Qual é a carga horária do curso?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>O curso tem uma carga horária total de 80 horas, distribuídas em 8 módulos. Cada módulo possui uma carga horária específica, conforme a complexidade dos temas abordados.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Quais são os pré-requisitos para o curso?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Para aproveitar ao máximo este curso, é recomendável que você tenha conhecimentos básicos de lógica de programação, familiaridade com HTML e CSS, e noções básicas de JavaScript. Além disso, é necessário ter um computador com acesso à internet.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Como funciona o projeto prático do curso?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>O projeto prático consiste em um sistema de gerenciamento para estúdio de pilates, que será desenvolvido incrementalmente ao longo do curso. O foco principal será a implementação de um CRUD básico para o cadastro de alunos, utilizando Node.js e Express, com integração a banco de dados MySQL. O projeto permite aplicar todos os conceitos aprendidos em um contexto real.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Recebo certificado ao concluir o curso?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Sim, ao concluir o curso com aproveitamento satisfatório, você receberá um certificado de conclusão, atestando as habilidades adquiridas em desenvolvimento backend com JavaScript.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Como posso obter suporte durante o curso?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Durante o curso, você terá acesso a um fórum de discussão onde poderá tirar dúvidas, interagir com outros alunos e receber suporte do professor. Além disso, você pode entrar em contato diretamente através do formulário nesta página ou pelo email contato@tiagosegato.com.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Prof. Tiago Segato</h2>
+                    <p>Desenvolvimento Backend com JavaScript: Do Zero à Aplicação Completa</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.linkedin.com/in/tiagosegato/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tiagosegato" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.youtube.com/@tiagosegato" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@tiagosegato" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/tiagosegato/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="sobre.html">Sobre o Curso</a></li>
+                            <li><a href="estrutura.html">Estrutura</a></li>
+                            <li><a href="exercicios.html">Exercícios</a></li>
+                            <li><a href="recursos.html">Recursos</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Módulos</h3>
+                        <ul>
+                            <li><a href="modulos/lpjs.html">Lógica de Programação</a></li>
+                            <li><a href="modulos/git.html">Git e GitHub</a></li>
+                            <li><a href="modulos/jstob.html">JavaScript e OO</a></li>
+                            <li><a href="modulos/pds.html">Padrões de Desenvolvimento</a></li>
+                            <li><a href="modulos/iws.html">WebServices</a></li>
+                            <li><a href="modulos/nodejs.html">Node.js</a></li>
+                            <li><a href="modulos/nbd.html">Banco de Dados</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Projeto</h3>
+                        <ul>
+                            <li><a href="projeto/index.html">Visão Geral</a></li>
+                            <li><a href="projeto/requisitos.html">Requisitos</a></li>
+                            <li><a href="projeto/modelagem.html">Modelagem</a></li>
+                            <li><a href="projeto/arquitetura.html">Arquitetura</a></li>
+                            <li><a href="projeto/passo-a-passo.html">Passo a Passo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Tiago Segato. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="https://tiagosegato.com/" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    <a href="mailto:contato@tiagosegato.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
